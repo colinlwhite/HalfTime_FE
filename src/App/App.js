@@ -1,6 +1,7 @@
 import React from 'react';
+import { Button } from 'reactstrap';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
@@ -18,6 +19,16 @@ function App() {
         >
           Learn React
         </a>
+        <button className='btn btn-danger'>HELP ME</button>
+        <Button
+          tag="a"
+          color="success"
+          size="large"
+          href="http://reactstrap.github.io"
+          target="_blank"
+>
+    View Reactstrap Docs
+</Button>
       </header>
     </div>
   );

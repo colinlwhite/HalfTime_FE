@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import authRequests from '../helpers/data/authRequests';
+import AppNavbar from '../components/AppNavbar/AppNavbar';
 import './App.scss';
 
 class App extends Component {
@@ -22,7 +23,8 @@ class App extends Component {
     //  const { userObject } = this.state;
     return (
       <div>
-        <h1>HalfTime</h1>
+        <AppNavbar />
+
       </div>
     );
   }

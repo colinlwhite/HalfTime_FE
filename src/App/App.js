@@ -1,11 +1,34 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {
+  BrowserRouter, Redirect, Route, Switch,
+} from 'react-router-dom';
 import authRequests from '../helpers/data/authRequests';
 import AppNavbar from '../components/AppNavbar/AppNavbar';
+import Students from '../components/Students/Students';
+import Instruments from '../components/Instruments/Instruments';
+import Uniforms from '../components/Uniforms/Uniforms';
+import Events from '../components/Events/Events';
+import Volunteers from '../components/Volunteers/Volunteers';
 import './App.scss';
 
-class App extends Component {
+const PublicRoute = ({ component: Component, authed, ...rest }) => {
+  const routeChecker = props => (authed === false
+    ? (<Component {...props} />)
+    : (<Redirect to={{ pathname: '/home', state: { from: props.location } }} />));
+  return <Route {...rest} render={props => routeChecker(props)} />;
+};
+
+const PrivateRoute = ({ component: Component, authed, ...rest }) => {
+  const routeChecker = props => (authed === true
+    ? (<Component {...props} />)
+    : (<Redirect to={{ pathname: '/auth', state: { from: props.location } }} />));
+  return <Route {...rest} render={props => routeChecker(props)} />;
+};
+
+class App extends React.Component {
   state = {
     userObject: {},
+    authed: false,
   }
 
   componentDidMount() {
@@ -14,17 +37,36 @@ class App extends Component {
         console.log(user);
         this.setState({
           userObject: user,
+          authed: true,
         });
       })
       .catch(err => ('err'));
   }
 
-  render() {
-    //  const { userObject } = this.state;
-    return (
-      <div>
-        <AppNavbar />
+  componentWillUnmount() {
+    this.setState({
+      authed: false,
+    });
+  }
 
+  render() {
+    const { userObject, authed } = this.state;
+    return (
+      <div className="App">
+        <BrowserRouter>
+          <React.Fragment>
+            <AppNavbar />
+            <div>
+              <Switch>
+              <PrivateRoute path='/students' component={() => <Students userObject={userObject} />} authed={authed} />
+              <PrivateRoute path='/instruments' component={() => <Instruments userObject={userObject} />} authed={authed} />
+              <PrivateRoute path='/uniforms' component={() => <Uniforms userObject={userObject} />} authed={authed} />
+              <PrivateRoute path='/events' component={() => <Events userObject={userObject} />} authed={authed} />
+              <PrivateRoute path='/volunteers' component={() => <Volunteers userObject={userObject} />} authed={authed} />
+              </Switch>
+            </div>
+          </React.Fragment>
+        </BrowserRouter>
       </div>
     );
   }

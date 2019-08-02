@@ -1,5 +1,6 @@
 import React from 'react';
 import studentRequests from '../../helpers/data/studentRequests';
+import StudentItem from '../StudentItem/StudentItem';
 import './Students.scss';
 
 class Students extends React.Component {
@@ -19,9 +20,17 @@ class Students extends React.Component {
   }
 
   render() {
+    const { students } = this.state;
+    const studentItemComponents = students.map(student => (
+      <StudentItem
+      key={student.id}
+      student={student}
+      />
+    ));
     return (
       <div>
         <h1>Students</h1>
+        <h3>{studentItemComponents}</h3>
       </div>
     );
   }

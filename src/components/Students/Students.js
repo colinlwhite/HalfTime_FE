@@ -19,12 +19,25 @@ class Students extends React.Component {
       .catch(err => ('err'));
   }
 
+  deleteOneStudent = (studentId) => {
+    studentRequests.deleteStudent(studentId)
+      .then(() => {
+        // const uid = authRequests.getCurrentUid();
+        studentRequests.getStudents()
+          .then((students) => {
+            this.setState({ students });
+          });
+      })
+      .catch(err => console.error('error in deleting', err));
+  }
+
   render() {
     const { students } = this.state;
     const studentItemComponents = students.map(student => (
       <StudentItem
       key={student.id}
       student={student}
+      deleteSingleStudent={this.deleteOneStudent}
       />
     ));
     return (

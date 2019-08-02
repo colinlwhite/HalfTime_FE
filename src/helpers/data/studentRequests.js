@@ -9,4 +9,9 @@ const getStudents = () => new Promise((resolve, reject) => {
     .catch(error => reject(error));
 });
 
-export default { getStudents };
+const deleteStudent = studentId => axios.delete(`https://localhost:44387/api/students/${studentId}`);
+
+export default {
+  getStudents,
+  deleteStudent,
+};

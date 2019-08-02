@@ -4,6 +4,11 @@ import {
 } from 'react-router-dom';
 import authRequests from '../helpers/data/authRequests';
 import AppNavbar from '../components/AppNavbar/AppNavbar';
+import Students from '../components/Students/Students';
+import Instruments from '../components/Instruments/Instruments';
+import Uniforms from '../components/Uniforms/Uniforms';
+import Events from '../components/Events/Events';
+import Volunteers from '../components/Volunteers/Volunteers';
 import './App.scss';
 
 const PublicRoute = ({ component: Component, authed, ...rest }) => {
@@ -45,7 +50,7 @@ class App extends React.Component {
   }
 
   render() {
-    //  const { userObject } = this.state;
+    const { userObject, authed } = this.state;
     return (
       <div className="App">
         <BrowserRouter>
@@ -53,6 +58,11 @@ class App extends React.Component {
             <AppNavbar />
             <div>
               <Switch>
+              <PrivateRoute path='/students' component={() => <Students userObject={userObject} />} authed={authed} />
+              <PrivateRoute path='/instruments' component={() => <Instruments userObject={userObject} />} authed={authed} />
+              <PrivateRoute path='/uniforms' component={() => <Uniforms userObject={userObject} />} authed={authed} />
+              <PrivateRoute path='/events' component={() => <Events userObject={userObject} />} authed={authed} />
+              <PrivateRoute path='/volunteers' component={() => <Volunteers userObject={userObject} />} authed={authed} />
               </Switch>
             </div>
           </React.Fragment>

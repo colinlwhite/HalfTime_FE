@@ -5,6 +5,7 @@ import {
 import authRequests from '../helpers/data/authRequests';
 import AppNavbar from '../components/AppNavbar/AppNavbar';
 // import Home from '../components/Home/Home';
+import StudentDetail from '../components/StudentDetail/StudentDetail';
 import Students from '../components/Students/Students';
 import StudentEdit from '../components/StudentEdit/StudentEdit';
 import StudentAdd from '../components/StudentAdd/StudentAdd';
@@ -61,6 +62,7 @@ class App extends React.Component {
             <AppNavbar />
             <div>
               <Switch>
+              <PrivateRoute path='/student/:id' component={() => <StudentDetail userObject={userObject} />} authed={authed} />
               <PrivateRoute path='/studentedit/:id' component={() => <StudentEdit userObject={userObject} />} authed={authed} />
               <PrivateRoute path='/studentadd' component={() => <StudentAdd userObject={userObject} />} authed={authed} />
               <PrivateRoute path='/students' component={() => <Students userObject={userObject} />} authed={authed} />

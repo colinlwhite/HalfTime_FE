@@ -61,7 +61,7 @@ class StudentAdd extends React.Component {
       return (
             <div className="listing-form col">
                 <h1>Add Student</h1>
-                <form onSubmit={this.formSubmit} autocomplete="off">
+                <form onSubmit={this.formSubmit} autoComplete="off">
 
 <div className="form-group">
   <label htmlFor="first name">First Name:</label>

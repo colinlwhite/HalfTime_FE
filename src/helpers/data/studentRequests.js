@@ -11,7 +11,10 @@ const getStudents = () => new Promise((resolve, reject) => {
 
 const deleteStudent = studentId => axios.put(`https://localhost:44387/api/students/delete/${studentId}`);
 
+const createStudent = newStudent => axios.post('https://localhost:44387/api/students/', newStudent);
+
 export default {
   getStudents,
   deleteStudent,
+  createStudent,
 };

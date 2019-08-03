@@ -1,4 +1,6 @@
 import React from 'react';
+import { NavLink as RRNavLink } from 'react-router-dom';
+import { NavLink } from 'reactstrap';
 import studentRequests from '../../helpers/data/studentRequests';
 import StudentItem from '../StudentItem/StudentItem';
 import './Students.scss';
@@ -11,7 +13,6 @@ class Students extends React.Component {
   componentDidMount() {
     studentRequests.getStudents()
       .then((students) => {
-        console.log(students);
         this.setState({
           students,
         });
@@ -22,7 +23,6 @@ class Students extends React.Component {
   deleteOneStudent = (studentId) => {
     studentRequests.deleteStudent(studentId)
       .then(() => {
-        // const uid = authRequests.getCurrentUid();
         studentRequests.getStudents()
           .then((students) => {
             this.setState({ students });
@@ -42,6 +42,7 @@ class Students extends React.Component {
     ));
     return (
       <div>
+        <NavLink tag={RRNavLink} to='/studentadd'><button className="btn btn-light">Add Student</button></NavLink>
         <h1>Students</h1>
         <h3>{studentItemComponents}</h3>
       </div>

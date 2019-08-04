@@ -4,11 +4,13 @@ import {
 } from 'react-router-dom';
 import authRequests from '../helpers/data/authRequests';
 import AppNavbar from '../components/AppNavbar/AppNavbar';
-// import Home from '../components/Home/Home';
 import StudentDetail from '../components/StudentDetail/StudentDetail';
 import Students from '../components/Students/Students';
 import StudentEdit from '../components/StudentEdit/StudentEdit';
 import StudentAdd from '../components/StudentAdd/StudentAdd';
+import InstrumentDetail from '../components/InstrumentDetail/InstrumentDetail';
+import InstrumentEdit from '../components/InstrumentEdit/InstrumentEdit';
+import InstrumentAdd from '../components/InstrumentAdd/InstrumentAdd';
 import Instruments from '../components/Instruments/Instruments';
 import Uniforms from '../components/Uniforms/Uniforms';
 import Events from '../components/Events/Events';
@@ -66,6 +68,9 @@ class App extends React.Component {
               <PrivateRoute path='/studentedit/:id' component={() => <StudentEdit userObject={userObject} />} authed={authed} />
               <PrivateRoute path='/studentadd' component={() => <StudentAdd userObject={userObject} />} authed={authed} />
               <PrivateRoute path='/students' component={() => <Students userObject={userObject} />} authed={authed} />
+              <PrivateRoute path='/instrument/:id' component={() => <InstrumentDetail userObject={userObject} />} authed={authed} />
+              <PrivateRoute path='/instrumentedit/:id' component={() => <InstrumentEdit userObject={userObject} />} authed={authed} />
+              <PrivateRoute path='/instrumentadd' component={() => <InstrumentAdd userObject={userObject} />} authed={authed} />
               <PrivateRoute path='/instruments' component={() => <Instruments userObject={userObject} />} authed={authed} />
               <PrivateRoute path='/uniforms' component={() => <Uniforms userObject={userObject} />} authed={authed} />
               <PrivateRoute path='/events' component={() => <Events userObject={userObject} />} authed={authed} />

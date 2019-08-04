@@ -1,6 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
-import { NavLink as RRNavLink } from 'react-router-dom';
+import { NavLink as RRNavLink, withRouter } from 'react-router-dom';
 import { NavLink } from 'reactstrap';
 import studentRequests from '../../helpers/data/studentRequests';
 import StudentItem from '../StudentItem/StudentItem';
@@ -32,8 +31,6 @@ class Students extends React.Component {
       .catch(err => console.error('error in deleting', err));
   }
 
-
-  // Single Page View Function
   onSelect = (id) => {
     this.props.history.push(`/student/${id}`);
   };

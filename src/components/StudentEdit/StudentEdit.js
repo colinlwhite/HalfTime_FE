@@ -5,29 +5,29 @@ import './StudentEdit.scss';
 
 class StudentEdit extends React.Component {
     state = {
-        newStudent: {},
+      newStudent: {},
     }
 
     formSubmitStudentEdit = (newStudent) => {
-        const studentId = this.props.match.params.id;
-        studentRequests.updateStudent(studentId, newStudent)
-            .then(() => {
-                this.props.history.push('/students');
-            });
+      const studentId = this.props.match.params.id;
+      studentRequests.updateStudent(studentId, newStudent)
+        .then(() => {
+          this.props.history.push('/students');
+        });
     }
 
     formFieldStringState = (name, e) => {
-        e.preventDefault();
-        const tempStudent = { ...this.state.newStudent };
-        tempStudent[name] = e.target.value;
-        this.setState({ newStudent: tempStudent });
+      e.preventDefault();
+      const tempStudent = { ...this.state.newStudent };
+      tempStudent[name] = e.target.value;
+      this.setState({ newStudent: tempStudent });
     }
 
     formFieldNumberState = (name, e) => {
-        e.preventDefault();
-        const tempStudent = { ...this.state.newStudent };
-        tempStudent[name] = e.target.value * 1;
-        this.setState({ newStudent: tempStudent });
+      e.preventDefault();
+      const tempStudent = { ...this.state.newStudent };
+      tempStudent[name] = e.target.value * 1;
+      this.setState({ newStudent: tempStudent });
     }
 
     firstnameChange = e => this.formFieldStringState('firstName', e);
@@ -43,23 +43,23 @@ class StudentEdit extends React.Component {
     zipcodeChange = e => this.formFieldNumberState('zipCode', e);
 
     formSubmit = (e) => {
-        e.preventDefault();
-        const myStudent = { ...this.state.newStudent };
-        this.formSubmitStudentEdit(myStudent);
+      e.preventDefault();
+      const myStudent = { ...this.state.newStudent };
+      this.formSubmitStudentEdit(myStudent);
     }
 
     componentDidMount() {
-        const studentId = this.props.match.params.id;
-        studentRequests.getSingleStudent(studentId)
-            .then((student) => {
-                this.setState({ newStudent: student });
-            })
-            .catch(err => console.error('error with single student', err));
+      const studentId = this.props.match.params.id;
+      studentRequests.getSingleStudent(studentId)
+        .then((student) => {
+          this.setState({ newStudent: student });
+        })
+        .catch(err => console.error('error with single student', err));
     }
 
     render() {
-        const { newStudent } = this.state;
-        return (
+      const { newStudent } = this.state;
+      return (
             <div className="listing-form col">
                 <h1>Edit Student</h1>
                 <form onSubmit={this.formSubmit} autoComplete="off">
@@ -144,7 +144,7 @@ class StudentEdit extends React.Component {
                     <button className="btn btn-light">SAVE</button>
                 </form>
             </div>
-        );
+      );
     }
 }
 

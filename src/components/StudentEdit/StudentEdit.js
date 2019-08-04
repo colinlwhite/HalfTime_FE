@@ -144,7 +144,7 @@ class StudentEdit extends React.Component {
                     <button className="btn btn-light">SAVE</button>
                 </form>
             </div>
-      );
+        );
     }
 }
 

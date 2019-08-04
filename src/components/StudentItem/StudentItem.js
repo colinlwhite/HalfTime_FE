@@ -3,20 +3,14 @@ import { withRouter } from 'react-router-dom';
 import './StudentItem.scss';
 
 class StudentItem extends React.Component {
-  // deleteStudent = (e) => {
-  //   e.preventDefault();
-  //   const { deleteSingleStudent, student } = this.props;
-  //   deleteSingleStudent(student.id);
-  // };
-
-  // editStudent = (e) => {
-  //   e.preventDefault();
-  //   const { student } = this.props;
-  //   this.props.history.push(`/studentedit/${student.id}`);
-  // }
+  deleteStudent = (e) => {
+    e.preventDefault();
+    const { deleteSingleStudent, student } = this.props;
+    deleteSingleStudent(student.id);
+  };
 
   studentClick = () => {
-    const { student, onSelect, deleteSingleStudent } = this.props;
+    const { student, onSelect } = this.props;
     onSelect(student.id);
   };
 
@@ -25,8 +19,7 @@ class StudentItem extends React.Component {
     return (
       <div className="student-div">
         <h2 onClick={this.studentClick}>{student.firstName}</h2>
-        {/* <span><button className="btn btn-danger" onClick={this.deleteStudent}>DELETE</button></span>
-                <span><button className="btn btn-primary" onClick={this.editStudent}>EDIT</button></span> */}
+        <span><button className="btn btn-danger" onClick={this.deleteStudent}>DELETE</button></span>
       </div>
     );
   }

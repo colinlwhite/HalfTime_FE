@@ -13,6 +13,9 @@ import InstrumentEdit from '../components/InstrumentEdit/InstrumentEdit';
 import InstrumentAdd from '../components/InstrumentAdd/InstrumentAdd';
 import Instruments from '../components/Instruments/Instruments';
 import Uniforms from '../components/Uniforms/Uniforms';
+import EventEdit from '../components/EventEdit/EventEdit';
+import EventDetail from '../components/EventDetail/EventDetail';
+import EventAdd from '../components/EventAdd/EventAdd';
 import Events from '../components/Events/Events';
 import Volunteers from '../components/Volunteers/Volunteers';
 import './App.scss';
@@ -73,6 +76,9 @@ class App extends React.Component {
               <PrivateRoute path='/instrumentadd' component={() => <InstrumentAdd userObject={userObject} />} authed={authed} />
               <PrivateRoute path='/instruments' component={() => <Instruments userObject={userObject} />} authed={authed} />
               <PrivateRoute path='/uniforms' component={() => <Uniforms userObject={userObject} />} authed={authed} />
+              <PrivateRoute path='/event/:id' component={() => <EventDetail userObject={userObject} />} authed={authed} />
+              <PrivateRoute path='/eventedit/:id' component={() => <EventEdit userObject={userObject} />} authed={authed} />
+              <PrivateRoute path='/eventadd' component={() => <EventAdd userObject={userObject} />} authed={authed} />
               <PrivateRoute path='/events' component={() => <Events userObject={userObject} />} authed={authed} />
               <PrivateRoute path='/volunteers' component={() => <Volunteers userObject={userObject} />} authed={authed} />
               {/* <PrivateRoute path="/" component={() => <Home userObject={userObject} />} authed={authed} />

@@ -18,6 +18,8 @@ const getEvents = () => new Promise((resolve, reject) => {
     .catch(error => reject(error));
 });
 
+const sendSMS = () => axios.post('https://localhost:44387/api/events/sms');
+
 const deleteEvent = eventId => axios.put(`https://localhost:44387/api/events/delete/${eventId}`);
 
 const createEvent = newEvent => axios.post('https://localhost:44387/api/events/', newEvent);
@@ -31,4 +33,5 @@ export default {
   createEvent,
   updateEvent,
   getSingleEvent,
+  sendSMS,
 };

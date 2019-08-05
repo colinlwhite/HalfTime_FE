@@ -12,6 +12,9 @@ import InstrumentDetail from '../components/InstrumentDetail/InstrumentDetail';
 import InstrumentEdit from '../components/InstrumentEdit/InstrumentEdit';
 import InstrumentAdd from '../components/InstrumentAdd/InstrumentAdd';
 import Instruments from '../components/Instruments/Instruments';
+import UniformDetail from '../components/UniformDetail/UniformDetail';
+import UniformEdit from '../components/UniformEdit/UniformEdit';
+import UniformAdd from '../components/UniformAdd/UniformAdd';
 import Uniforms from '../components/Uniforms/Uniforms';
 import EventEdit from '../components/EventEdit/EventEdit';
 import EventDetail from '../components/EventDetail/EventDetail';
@@ -77,6 +80,9 @@ class App extends React.Component {
               <PrivateRoute path='/instrumentedit/:id' component={() => <InstrumentEdit userObject={userObject} />} authed={authed} />
               <PrivateRoute path='/instrumentadd' component={() => <InstrumentAdd userObject={userObject} />} authed={authed} />
               <PrivateRoute path='/instruments' component={() => <Instruments userObject={userObject} />} authed={authed} />
+              <PrivateRoute path='/uniform/:id' component={() => <UniformDetail userObject={userObject} />} authed={authed} />
+              <PrivateRoute path='/uniformedit/:id' component={() => <UniformEdit userObject={userObject} />} authed={authed} />
+              <PrivateRoute path='/uniformadd' component={() => <UniformAdd userObject={userObject} />} authed={authed} />
               <PrivateRoute path='/uniforms' component={() => <Uniforms userObject={userObject} />} authed={authed} />
               <PrivateRoute path='/event/:id' component={() => <EventDetail userObject={userObject} />} authed={authed} />
               <PrivateRoute path='/eventedit/:id' component={() => <EventEdit userObject={userObject} />} authed={authed} />

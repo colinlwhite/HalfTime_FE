@@ -155,6 +155,7 @@ class VolunteerEdit extends React.Component {
     onChange={this.phoneNumberChange}
   />
 </div>
+<button className="btn btn-light">SAVE</button>
                 </form>
             </div>
       );

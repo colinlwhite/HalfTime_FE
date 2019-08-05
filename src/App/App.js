@@ -17,6 +17,9 @@ import EventEdit from '../components/EventEdit/EventEdit';
 import EventDetail from '../components/EventDetail/EventDetail';
 import EventAdd from '../components/EventAdd/EventAdd';
 import Events from '../components/Events/Events';
+import VolunteerEdit from '../components/VolunteerEdit/VolunteerEdit';
+import VolunteerDetail from '../components/VolunteerDetail/VolunteerDetail';
+import VolunteerAdd from '../components/VolunteerAdd/VolunteerAdd';
 import Volunteers from '../components/Volunteers/Volunteers';
 import './App.scss';
 
@@ -43,7 +46,6 @@ class App extends React.Component {
   componentDidMount() {
     authRequests.getUser()
       .then((user) => {
-        console.log(user);
         this.setState({
           userObject: user,
           authed: true,
@@ -80,6 +82,9 @@ class App extends React.Component {
               <PrivateRoute path='/eventedit/:id' component={() => <EventEdit userObject={userObject} />} authed={authed} />
               <PrivateRoute path='/eventadd' component={() => <EventAdd userObject={userObject} />} authed={authed} />
               <PrivateRoute path='/events' component={() => <Events userObject={userObject} />} authed={authed} />
+              <PrivateRoute path='/volunteer/:id' component={() => <VolunteerDetail userObject={userObject} />} authed={authed} />
+              <PrivateRoute path='/volunteeredit/:id' component={() => <VolunteerEdit userObject={userObject} />} authed={authed} />
+              <PrivateRoute path='/volunteeradd' component={() => <VolunteerAdd userObject={userObject} />} authed={authed} />
               <PrivateRoute path='/volunteers' component={() => <Volunteers userObject={userObject} />} authed={authed} />
               {/* <PrivateRoute path="/" component={() => <Home userObject={userObject} />} authed={authed} />
               <PrivateRoute path="/home" component={() => <Home userObject={userObject} />} authed={authed} /> */}

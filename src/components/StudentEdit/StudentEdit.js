@@ -119,7 +119,7 @@ class StudentEdit extends React.Component {
                     <div className="form-group">
                         <label htmlFor="state">State:</label>
                         <input
-                            type="text"
+                            type="select"
                             className="form-control"
                             id="state"
                             aria-describedby="state"

@@ -1,17 +1,19 @@
 import React from 'react';
+import DatePicker from 'react-datepicker';
 import { withRouter } from 'react-router-dom';
 import './EventAdd.scss';
 import eventRequests from '../../helpers/data/eventRequests';
+import 'react-datepicker/dist/react-datepicker.css';
 
 const defaultEvent = {
-  brand: '',
-  category: '',
-  condition: '',
-  description: '',
-  id: 0,
-  modelNumber: '',
   name: '',
-  studentId: 0,
+  date: '',
+  type: '',
+  description: '',
+  street: '',
+  city: '',
+  state: '',
+  zipCode: 0,
 };
 
 class EventAdd extends React.Component {
@@ -40,21 +42,25 @@ class EventAdd extends React.Component {
       this.setState({ newEvent: tempEvent });
     }
 
-    brandChange = e => this.formFieldStringState('brand', e);
+    nameChange = e => this.formFieldStringState('name', e);
 
-    categoryChange = e => this.formFieldStringState('category', e);
+    handleDateChange = (date) => {
+      const tempEvent = { ...this.state.newEvent };
+      tempEvent.date = new Date(date);
+      this.setState({ newEvent: tempEvent });
+    }
 
-    conditionChange = e => this.formFieldStringState('condition', e);
+    typeChange = e => this.formFieldStringState('type', e);
 
     descriptionChange = e => this.formFieldStringState('description', e);
 
-    idChange = e => this.formFieldNumberState('id', e);
+    streetChange = e => this.formFieldStringState('street', e);
 
-    modelNumberChange = e => this.formFieldStringState('modelNumber', e);
+    cityChange = e => this.formFieldStringState('city', e);
 
-    nameChange = e => this.formFieldStringState('name', e);
+    stateChange = e => this.formFieldStringState('state', e);
 
-    studentIdChange = e => this.formFieldNumberState('studentId', e);
+    zipCodeChange = e => this.formFieldNumberState('zipCode', e);
 
     formSubmit = (e) => {
       e.preventDefault();
@@ -70,41 +76,42 @@ class EventAdd extends React.Component {
                 <form onSubmit={this.formSubmit} autoComplete="off">
 
 <div className="form-group">
-  <label htmlFor="brand">Brand:</label>
+  <label htmlFor="name">Name:</label>
   <input
     type="text"
     className="form-control"
-    id="brand"
-    aria-describedby="brand"
-    placeholder="brand"
-    value={newEvent.brand}
-    onChange={this.brandChange}
+    id="name"
+    aria-describedby="name"
+    placeholder="name"
+    value={newEvent.name}
+    onChange={this.nameChange}
   />
 </div>
 
+ {/* Date */}
 <div className="form-group">
-  <label htmlFor="category">Category:</label>
-  <input
-    type="text"
-    className="form-control"
-    id="category"
-    aria-describedby="category"
-    placeholder="category"
-    value={newEvent.category}
-    onChange={this.categoryChange}
-  />
+<label className="date" htmlFor="date">Date:</label>
+    <DatePicker
+       selected={this.state.newEvent.date}
+       onChange={this.handleDateChange}
+       showTimeSelect
+       timeFormat="h:mm aa"
+       timeIntervals={15}
+       dateFormat="MMMM d, yyyy h:mm aa"
+       timeCaption="time"
+      />
 </div>
 
 <div className="form-group">
-  <label htmlFor="condition">Condition:</label>
+  <label htmlFor="type">Type:</label>
   <input
     type="text"
     className="form-control"
-    id="condition"
-    aria-describedby="condition"
-    placeholder="condition"
-    value={newEvent.condition}
-    onChange={this.conditionChange}
+    id="type"
+    aria-describedby="type"
+    placeholder="type"
+    value={newEvent.type}
+    onChange={this.typeChange}
   />
 </div>
 
@@ -122,54 +129,54 @@ class EventAdd extends React.Component {
 </div>
 
 <div className="form-group">
-  <label htmlFor="state">ID:</label>
-  <input
-    type="number"
-    className="form-control"
-    id="id"
-    aria-describedby="id"
-    placeholder="ID"
-    value={newEvent.id}
-    onChange={this.idChange}
-  />
-</div>
-
-<div className="form-group">
-  <label htmlFor="modelNumber">Model Number:</label>
+  <label htmlFor="street">Street:</label>
   <input
     type="text"
     className="form-control"
-    id="modelNumber"
-    aria-describedby="modelNumber"
-    placeholder="Model Number"
-    value={newEvent.modelNumber}
-    onChange={this.modelNumberChange}
+    id="street"
+    aria-describedby="street"
+    placeholder="Street"
+    value={newEvent.street}
+    onChange={this.streetChange}
   />
 </div>
 
 <div className="form-group">
-  <label htmlFor="name">Name:</label>
+  <label htmlFor="city">City:</label>
   <input
     type="text"
     className="form-control"
-    id="name"
-    aria-describedby="Name"
-    placeholder="Name"
-    value={newEvent.name}
-    onChange={this.nameChange}
+    id="city"
+    aria-describedby="city"
+    placeholder="City"
+    value={newEvent.city}
+    onChange={this.cityChange}
   />
 </div>
 
 <div className="form-group">
-  <label htmlFor="studentId">Student ID:</label>
+  <label htmlFor="state">State:</label>
+  <input
+    type="text"
+    className="form-control"
+    id="state"
+    aria-describedby="state"
+    placeholder="state"
+    value={newEvent.state}
+    onChange={this.stateChange}
+  />
+</div>
+
+<div className="form-group">
+  <label htmlFor="zipcode">Zip Code:</label>
   <input
     type="number"
     className="form-control"
-    id="studentId"
-    aria-describedby="studentId"
+    id="zipcode"
+    aria-describedby="zipcode"
     placeholder=""
-    value={newEvent.studentId}
-    onChange={this.studentIdChange}
+    value={newEvent.zipCode}
+    onChange={this.zipCodeChange}
   />
 </div>
 <button className="btn btn-light">SAVE</button>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import utility from '../../helpers/utils/utility';
 import './EventItem.scss';
 
 class EventItem extends React.Component {
@@ -19,7 +20,7 @@ class EventItem extends React.Component {
     return (
       <div className="event-div">
         <h2 onClick={this.eventClick}>{event.name}</h2>
-        <h3>{event.date}</h3>
+        <h3>{utility.dateFormat(event.date)}</h3>
         <span><button className="btn btn-danger" onClick={this.deleteEvent}>DELETE</button></span>
       </div>
     );

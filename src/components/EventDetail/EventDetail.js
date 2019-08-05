@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import utility from '../../helpers/utils/utility';
 import eventRequests from '../../helpers/data/eventRequests';
 import './EventDetail.scss';
 
@@ -32,6 +33,7 @@ class EventDetail extends React.Component {
         <h1>Event Details</h1>
         <button onClick={this.backToEventsView}>BACK TO EVENTS</button>
         <h2>{singleEvent.name}</h2>
+        <h3>{utility.dateFormat(singleEvent.date)}</h3>
         <span><button className="btn btn-primary" onClick={this.editEvent}>EDIT</button></span>
       </div>
     );

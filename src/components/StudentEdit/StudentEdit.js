@@ -1,5 +1,14 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import {
+  Button,
+  Row,
+  Col,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+} from 'reactstrap';
 import studentRequests from '../../helpers/data/studentRequests';
 import './StudentEdit.scss';
 
@@ -116,10 +125,10 @@ class StudentEdit extends React.Component {
                         />
                     </div>
 
-                    <div className="form-group">
+                    {/* <div className="form-group">
                         <label htmlFor="state">State:</label>
                         <input
-                            type="select"
+                            type="text"
                             className="form-control"
                             id="state"
                             aria-describedby="state"
@@ -127,7 +136,16 @@ class StudentEdit extends React.Component {
                             value={newStudent.state}
                             onChange={this.stateChange}
                         />
-                    </div>
+                    </div> */}
+
+                      {/* reactstrap template */}
+                      <FormGroup className="form-group">
+                      <Label htmlFor="condition">State:</Label>
+                        <Input type="select" onChange={this.stateChange} value={newStudent.state}>
+                          <option>AL</option>
+                          <option>AK</option>
+                        </Input>
+                    </FormGroup>
 
                     <div className="form-group">
                         <label htmlFor="zipcode">ZipCode:</label>
@@ -141,6 +159,16 @@ class StudentEdit extends React.Component {
                             onChange={this.zipcodeChange}
                         />
                     </div>
+
+
+                      {/* reactstrap template
+                    <FormGroup className="form-group">
+                      <Label htmlFor="condition">State:</Label>
+                        <Input type="select" onChange={this.stateChange} value={newStudent.state}>
+                          <option>AL</option>
+                        </Input>
+                    </FormGroup> */}
+
                     <button className="btn btn-light">SAVE</button>
                 </form>
             </div>

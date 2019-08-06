@@ -1,9 +1,10 @@
 import React from 'react';
 import {
-  BrowserRouter, Redirect, Route, Switch,
+  BrowserRouter, Route, Switch,
 } from 'react-router-dom';
 import authRequests from '../helpers/data/authRequests';
 import AppNavbar from '../components/AppNavbar/AppNavbar';
+import Home from '../components/Home/Home';
 import StudentDetail from '../components/StudentDetail/StudentDetail';
 import Students from '../components/Students/Students';
 import StudentEdit from '../components/StudentEdit/StudentEdit';
@@ -25,20 +26,6 @@ import VolunteerDetail from '../components/VolunteerDetail/VolunteerDetail';
 import VolunteerAdd from '../components/VolunteerAdd/VolunteerAdd';
 import Volunteers from '../components/Volunteers/Volunteers';
 import './App.scss';
-
-const PublicRoute = ({ component: Component, authed, ...rest }) => {
-  const routeChecker = props => (authed === false
-    ? (<Component {...props} />)
-    : (<Redirect to={{ pathname: '/home', state: { from: props.location } }} />));
-  return <Route {...rest} render={props => routeChecker(props)} />;
-};
-
-const PrivateRoute = ({ component: Component, authed, ...rest }) => {
-  const routeChecker = props => (authed === true
-    ? (<Component {...props} />)
-    : (<Redirect to={{ pathname: '/auth', state: { from: props.location } }} />));
-  return <Route {...rest} render={props => routeChecker(props)} />;
-};
 
 class App extends React.Component {
   state = {
@@ -72,28 +59,28 @@ class App extends React.Component {
             <AppNavbar />
             <div>
               <Switch>
-              <PrivateRoute path='/student/:id' component={() => <StudentDetail userObject={userObject} />} authed={authed} />
-              <PrivateRoute path='/studentedit/:id' component={() => <StudentEdit userObject={userObject} />} authed={authed} />
-              <PrivateRoute path='/studentadd' component={() => <StudentAdd userObject={userObject} />} authed={authed} />
-              <PrivateRoute path='/students' component={() => <Students userObject={userObject} />} authed={authed} />
-              <PrivateRoute path='/instrument/:id' component={() => <InstrumentDetail userObject={userObject} />} authed={authed} />
-              <PrivateRoute path='/instrumentedit/:id' component={() => <InstrumentEdit userObject={userObject} />} authed={authed} />
-              <PrivateRoute path='/instrumentadd' component={() => <InstrumentAdd userObject={userObject} />} authed={authed} />
-              <PrivateRoute path='/instruments' component={() => <Instruments userObject={userObject} />} authed={authed} />
-              <PrivateRoute path='/uniform/:id' component={() => <UniformDetail userObject={userObject} />} authed={authed} />
-              <PrivateRoute path='/uniformedit/:id' component={() => <UniformEdit userObject={userObject} />} authed={authed} />
-              <PrivateRoute path='/uniformadd' component={() => <UniformAdd userObject={userObject} />} authed={authed} />
-              <PrivateRoute path='/uniforms' component={() => <Uniforms userObject={userObject} />} authed={authed} />
-              <PrivateRoute path='/event/:id' component={() => <EventDetail userObject={userObject} />} authed={authed} />
-              <PrivateRoute path='/eventedit/:id' component={() => <EventEdit userObject={userObject} />} authed={authed} />
-              <PrivateRoute path='/eventadd' component={() => <EventAdd userObject={userObject} />} authed={authed} />
-              <PrivateRoute path='/events' component={() => <Events userObject={userObject} />} authed={authed} />
-              <PrivateRoute path='/volunteer/:id' component={() => <VolunteerDetail userObject={userObject} />} authed={authed} />
-              <PrivateRoute path='/volunteeredit/:id' component={() => <VolunteerEdit userObject={userObject} />} authed={authed} />
-              <PrivateRoute path='/volunteeradd' component={() => <VolunteerAdd userObject={userObject} />} authed={authed} />
-              <PrivateRoute path='/volunteers' component={() => <Volunteers userObject={userObject} />} authed={authed} />
-              {/* <PrivateRoute path="/" component={() => <Home userObject={userObject} />} authed={authed} />
-              <PrivateRoute path="/home" component={() => <Home userObject={userObject} />} authed={authed} /> */}
+              <Route path='/home' component={() => <Home userObject={userObject} />} authed={authed} />
+              <Route path='/' exact component={() => <Home userObject={userObject} />} authed={authed} />
+              <Route path='/student/:id' component={() => <StudentDetail userObject={userObject} />} authed={authed} />
+              <Route path='/studentedit/:id' component={() => <StudentEdit userObject={userObject} />} authed={authed} />
+              <Route path='/studentadd' component={() => <StudentAdd userObject={userObject} />} authed={authed} />
+              <Route path='/students' component={() => <Students userObject={userObject} />} authed={authed} />
+              <Route path='/instrument/:id' component={() => <InstrumentDetail userObject={userObject} />} authed={authed} />
+              <Route path='/instrumentedit/:id' component={() => <InstrumentEdit userObject={userObject} />} authed={authed} />
+              <Route path='/instrumentadd' component={() => <InstrumentAdd userObject={userObject} />} authed={authed} />
+              <Route path='/instruments' component={() => <Instruments userObject={userObject} />} authed={authed} />
+              <Route path='/uniform/:id' component={() => <UniformDetail userObject={userObject} />} authed={authed} />
+              <Route path='/uniformedit/:id' component={() => <UniformEdit userObject={userObject} />} authed={authed} />
+              <Route path='/uniformadd' component={() => <UniformAdd userObject={userObject} />} authed={authed} />
+              <Route path='/uniforms' component={() => <Uniforms userObject={userObject} />} authed={authed} />
+              <Route path='/event/:id' component={() => <EventDetail userObject={userObject} />} authed={authed} />
+              <Route path='/eventedit/:id' component={() => <EventEdit userObject={userObject} />} authed={authed} />
+              <Route path='/eventadd' component={() => <EventAdd userObject={userObject} />} authed={authed} />
+              <Route path='/events' component={() => <Events userObject={userObject} />} authed={authed} />
+              <Route path='/volunteer/:id' component={() => <VolunteerDetail userObject={userObject} />} authed={authed} />
+              <Route path='/volunteeredit/:id' component={() => <VolunteerEdit userObject={userObject} />} authed={authed} />
+              <Route path='/volunteeradd' component={() => <VolunteerAdd userObject={userObject} />} authed={authed} />
+              <Route path='/volunteers' component={() => <Volunteers userObject={userObject} />} authed={authed} />
               </Switch>
             </div>
           </React.Fragment>

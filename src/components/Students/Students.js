@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchField from 'react-search-field';
 import { NavLink as RRNavLink, withRouter } from 'react-router-dom';
 import { NavLink } from 'reactstrap';
 import studentRequests from '../../helpers/data/studentRequests';
@@ -8,6 +9,7 @@ import './Students.scss';
 class Students extends React.Component {
   state = {
     students: [],
+    filteredStudents: [],
   }
 
   componentDidMount() {
@@ -15,6 +17,7 @@ class Students extends React.Component {
       .then((students) => {
         this.setState({
           students,
+          filteredStudents: students,
         });
       })
       .catch(err => ('err'));
@@ -25,10 +28,30 @@ class Students extends React.Component {
       .then(() => {
         studentRequests.getStudents()
           .then((students) => {
-            this.setState({ students });
+            this.setState({
+              students,
+              filteredStudents: students,
+            });
           });
       })
       .catch(err => console.error('error in deleting', err));
+  }
+
+  onChange = (value, e) => {
+    const { students } = this.state;
+    const filteredStudents = [];
+    e.preventDefault();
+    if (!value) {
+      this.setState({ filteredStudents: students });
+    } else {
+      students.forEach((student) => {
+        if (student.firstName.toLowerCase().includes(value.toLowerCase()) 
+        || student.lastName.toLowerCase().includes(value.toLowerCase())) {
+          filteredStudents.push(student);
+        }
+        this.setState({ filteredStudents });
+      });
+    }
   }
 
   onSelect = (id) => {
@@ -36,8 +59,8 @@ class Students extends React.Component {
   };
 
   render() {
-    const { students } = this.state;
-    const studentItemComponents = students.map(student => (
+    const { filteredStudents } = this.state;
+    const studentItemComponents = filteredStudents.map(student => (
       <StudentItem
       key={student.id}
       student={student}
@@ -48,6 +71,12 @@ class Students extends React.Component {
     return (
       <div>
         <NavLink tag={RRNavLink} to='/studentadd'><button className="btn btn-light">Add Student</button></NavLink>
+        <SearchField
+            placeholder="Search Students"
+            onChange={ this.onChange }
+            searchText=""
+            classNames="search-bar"
+          />
         <h1>Students</h1>
         <h3>{studentItemComponents}</h3>
       </div>

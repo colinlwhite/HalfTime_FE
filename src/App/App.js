@@ -59,7 +59,8 @@ class App extends React.Component {
             <AppNavbar />
             <div>
               <Switch>
-              <Route path='/home' component={() => <Home userObject={userObject} />} authed={authed} />
+              <Route path='/home'
+              component={() => <Home userObject={userObject} />} authed={authed} />
               <Route path='/' exact component={() => <Home userObject={userObject} />} authed={authed} />
               <Route path='/student/:id' component={() => <StudentDetail userObject={userObject} />} authed={authed} />
               <Route path='/studentedit/:id' component={() => <StudentEdit userObject={userObject} />} authed={authed} />

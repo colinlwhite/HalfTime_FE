@@ -1,4 +1,13 @@
 import React from 'react';
+import {
+  Button,
+  Row,
+  Col,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+} from 'reactstrap';
 import { withRouter } from 'react-router-dom';
 import './StudentAdd.scss';
 import studentRequests from '../../helpers/data/studentRequests';

@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchField from 'react-search-field';
 import { NavLink as RRNavLink, withRouter } from 'react-router-dom';
 import { NavLink } from 'reactstrap';
 import volunteerRequests from '../../helpers/data/volunteerRequests';
@@ -8,6 +9,7 @@ import './Volunteers.scss';
 class Volunteers extends React.Component {
   state = {
     volunteers: [],
+    filteredVolunteers: [],
   }
 
   componentDidMount() {
@@ -15,6 +17,7 @@ class Volunteers extends React.Component {
       .then((volunteers) => {
         this.setState({
           volunteers,
+          filteredVolunteers: volunteers,
         });
       })
       .catch(err => ('err'));
@@ -25,10 +28,30 @@ class Volunteers extends React.Component {
       .then(() => {
         volunteerRequests.getVolunteers()
           .then((volunteers) => {
-            this.setState({ volunteers });
+            this.setState({
+              volunteers,
+              filteredVolunteers: volunteers,
+            });
           });
       })
       .catch(err => console.error('error in deleting', err));
+  }
+
+  onChange = (value, e) => {
+    const { volunteers } = this.state;
+    const filteredVolunteers = [];
+    e.preventDefault();
+    if (!value) {
+      this.setState({ filteredVolunteers: volunteers });
+    } else {
+      volunteers.forEach((volunteer) => {
+        if (volunteer.firstName.toLowerCase().includes(value.toLowerCase())
+        || volunteer.lastName.toLowerCase().includes(value.toLowerCase())) {
+          filteredVolunteers.push(volunteer);
+        }
+        this.setState({ filteredVolunteers });
+      });
+    }
   }
 
   onSelect = (id) => {
@@ -36,8 +59,8 @@ class Volunteers extends React.Component {
   };
 
   render() {
-    const { volunteers } = this.state;
-    const volunteerItemComponents = volunteers.map(volunteer => (
+    const { filteredVolunteers } = this.state;
+    const volunteerItemComponents = filteredVolunteers.map(volunteer => (
       <VolunteerItem
       key={volunteer.id}
       volunteer={volunteer}
@@ -48,6 +71,12 @@ class Volunteers extends React.Component {
     return (
       <div>
         <NavLink tag={RRNavLink} to='/volunteeradd'><button className="btn btn-light">Add Volunteer</button></NavLink>
+        <SearchField
+            placeholder="Search Volunteers"
+            onChange={ this.onChange }
+            searchText=""
+            classNames="search-bar"
+          />
         <h1>Volunteers</h1>
         <h3>{volunteerItemComponents}</h3>
       </div>

@@ -1,4 +1,13 @@
 import React from 'react';
+import {
+  Button,
+  Row,
+  Col,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+} from 'reactstrap';
 import { withRouter } from 'react-router-dom';
 import instrumentRequests from '../../helpers/data/instrumentRequests';
 import './InstrumentEdit.scss';
@@ -80,31 +89,30 @@ class InstrumentEdit extends React.Component {
   />
 </div>
 
-<div className="form-group">
-  <label htmlFor="category">Category:</label>
-  <input
-    type="text"
-    className="form-control"
-    id="category"
-    aria-describedby="category"
-    placeholder="category"
-    value={newInstrument.category}
-    onChange={this.categoryChange}
-  />
-</div>
+<FormGroup className="form-group">
+    <Label htmlFor="category">Category:</Label>
+      <Input type="select" onChange={this.categoryChange} value={newInstrument.category}>
+      <option>Auxiliary</option>
+      <option>Brass</option>
+      <option>Drumline</option>
+      <option>Front Ensemble</option>
+      <option>Woodwinds</option>
+      </Input>
+  </FormGroup>
 
-<div className="form-group">
-  <label htmlFor="condition">Condition:</label>
-  <input
-    type="text"
-    className="form-control"
-    id="condition"
-    aria-describedby="condition"
-    placeholder="condition"
-    value={newInstrument.condition}
-    onChange={this.conditionChange}
-  />
-</div>
+<FormGroup className="form-group">
+    <Label htmlFor="condition">Condition:</Label>
+      <Input type="select" onChange={this.conditionChange} value={newInstrument.condition}>
+      <option>Just Got It</option>
+      <option>Just Like New</option>
+      <option>Excellent</option>
+      <option>Very Good</option>
+      <option>Good</option>
+      <option>Fair</option>
+      <option>Poor</option>
+      <option>Doesn't Work</option>
+      </Input>
+  </FormGroup>
 
 <div className="form-group">
   <label htmlFor="description">Description:</label>

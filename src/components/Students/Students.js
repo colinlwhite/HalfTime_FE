@@ -45,7 +45,7 @@ class Students extends React.Component {
       this.setState({ filteredStudents: students });
     } else {
       students.forEach((student) => {
-        if (student.firstName.toLowerCase().includes(value.toLowerCase()) 
+        if (student.firstName.toLowerCase().includes(value.toLowerCase())
         || student.lastName.toLowerCase().includes(value.toLowerCase())) {
           filteredStudents.push(student);
         }

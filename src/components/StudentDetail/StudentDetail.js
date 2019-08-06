@@ -32,6 +32,9 @@ class StudentDetail extends React.Component {
         <h1>Student Details</h1>
         <button onClick={this.backToStudentsView}>BACK TO STUDENTS</button>
         <h2>{singleStudent.firstName}</h2>
+        <h2>{singleStudent.gender}</h2>
+        <h2>{singleStudent.grade}</h2>
+        <h2>Chair: {singleStudent.chair}</h2>
         <span><button className="btn btn-primary" onClick={this.editStudent}>EDIT</button></span>
       </div>
     );

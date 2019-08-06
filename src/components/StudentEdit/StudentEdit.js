@@ -51,6 +51,12 @@ class StudentEdit extends React.Component {
 
     zipcodeChange = e => this.formFieldNumberState('zipCode', e);
 
+    genderChange = e => this.formFieldStringState('gender', e);
+
+    gradeChange = e => this.formFieldStringState('grade', e);
+
+    chairChange = e => this.formFieldStringState('chair', e);
+
     formSubmit = (e) => {
       e.preventDefault();
       const myStudent = { ...this.state.newStudent };
@@ -194,14 +200,34 @@ class StudentEdit extends React.Component {
                         />
                     </div>
 
-
-                      {/* reactstrap template
                     <FormGroup className="form-group">
-                      <Label htmlFor="condition">State:</Label>
-                        <Input type="select" onChange={this.stateChange} value={newStudent.state}>
-                          <option>AL</option>
+                      <Label htmlFor="gender">Gender:</Label>
+                        <Input type="select" onChange={this.genderChange} value={newStudent.gender}>
+                          <option>Male</option>
+                          <option>Female</option>
                         </Input>
-                    </FormGroup> */}
+                    </FormGroup>
+
+                    <FormGroup className="form-group">
+                      <Label htmlFor="grade">Grade:</Label>
+                        <Input type="select" onChange={this.gradeChange} value={newStudent.grade}>
+                          <option>Freshman</option>
+                          <option>Sophomore</option>
+                          <option>Junior</option>
+                          <option>Senior</option>
+                        </Input>
+                    </FormGroup>
+
+                    <FormGroup className="form-group">
+                      <Label htmlFor="chair">Chair:</Label>
+                        <Input type="select" onChange={this.chairChange} value={newStudent.chair}>
+                          <option>1st</option>
+                          <option>2nd</option>
+                          <option>3rd</option>
+                          <option>4th</option>
+                          <option>5th</option>
+                        </Input>
+                    </FormGroup>
 
                     <button className="btn btn-light">SAVE</button>
                 </form>

@@ -31,9 +31,20 @@ class UniformDetail extends React.Component {
       <div>
         <h1>Uniform Details</h1>
         <button onClick={this.backToUniformsView}>BACK TO UNIFORMS</button>
-        <h2>{singleUniform.condition}</h2>
-        <h2>{singleUniform.size}</h2>
+
+        <div class="card mx-auto mt-4 detail-card" style={{ width: '35%' }}>
+        <div class="card-body">
+        <h5 class="card-title">Details</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <h3>{singleUniform.id}</h3>
+        <h3>{singleUniform.size}</h3>
+        <h3>{singleUniform.condition}</h3>
+        <h3>{singleUniform.studentId}</h3>
         <span><button className="btn btn-primary" onClick={this.editUniform}>EDIT</button></span>
+        </div>
+        </div>
+
+
       </div>
     );
   }

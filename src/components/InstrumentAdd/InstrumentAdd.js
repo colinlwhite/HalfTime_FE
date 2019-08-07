@@ -76,7 +76,7 @@ class InstrumentAdd extends React.Component {
       return (
             <div className="listing-form col">
                 <h1>Add Instrument</h1>
-                <form onSubmit={this.formSubmit} autoComplete="off">
+                <form onSubmit={this.formSubmit} autoComplete="off" className="add-edit-form">
 
 <div className="form-group">
   <label htmlFor="brand">Brand:</label>
@@ -85,7 +85,7 @@ class InstrumentAdd extends React.Component {
     className="form-control"
     id="brand"
     aria-describedby="brand"
-    placeholder="brand"
+    placeholder="Brand"
     value={newInstrument.brand}
     onChange={this.brandChange}
   />
@@ -123,7 +123,7 @@ class InstrumentAdd extends React.Component {
     className="form-control"
     id="description"
     aria-describedby="description"
-    placeholder="description"
+    placeholder="Description"
     value={newInstrument.description}
     onChange={this.descriptionChange}
   />

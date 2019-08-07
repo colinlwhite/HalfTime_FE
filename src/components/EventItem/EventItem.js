@@ -18,11 +18,14 @@ class EventItem extends React.Component {
   render() {
     const { event } = this.props;
     return (
-      <div className="event-div">
-        <h2 onClick={this.eventClick}>{event.name}</h2>
-        <h3>{utility.dateFormat(event.date)}</h3>
-        <span><button className="btn btn-danger" onClick={this.deleteEvent}>DELETE</button></span>
-      </div>
+      <div className="event-div mx-auto mb-3">
+        <div className="card" style={{ width: '18rem' }}>
+            <h2 onClick={this.eventClick} className="card-text">{event.name}</h2>
+            <h2 className="card-text">{utility.dateFormat(event.date)}</h2>
+            <h6>{event.type}</h6>
+            <span><button className="btn btn-danger mb-2" onClick={this.deleteEvent}>DELETE</button></span>
+        </div>
+    </div>
     );
   }
 }

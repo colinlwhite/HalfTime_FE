@@ -82,7 +82,7 @@ class EventAdd extends React.Component {
       return (
             <div className="listing-form col">
                 <h1>Add Event</h1>
-                <form onSubmit={this.formSubmit} autoComplete="off">
+                <form onSubmit={this.formSubmit} autoComplete="off" className="add-edit-form">
 
 <div className="form-group">
   <label htmlFor="name">Name:</label>
@@ -91,7 +91,7 @@ class EventAdd extends React.Component {
     className="form-control"
     id="name"
     aria-describedby="name"
-    placeholder="name"
+    placeholder="Name"
     value={newEvent.name}
     onChange={this.nameChange}
   />
@@ -130,7 +130,7 @@ class EventAdd extends React.Component {
     className="form-control"
     id="description"
     aria-describedby="description"
-    placeholder="description"
+    placeholder="Description"
     value={newEvent.description}
     onChange={this.descriptionChange}
   />

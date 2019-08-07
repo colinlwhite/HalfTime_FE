@@ -79,7 +79,7 @@ class StudentAdd extends React.Component {
       return (
             <div className="listing-form col">
                 <h1>Add Student</h1>
-                <form onSubmit={this.formSubmit} autoComplete="off">
+                <form onSubmit={this.formSubmit} autoComplete="off" className="add-edit-form">
 
 <div className="form-group">
   <label htmlFor="first name">First Name:</label>
@@ -114,7 +114,7 @@ class StudentAdd extends React.Component {
     className="form-control"
     id="street"
     aria-describedby="street"
-    placeholder="street"
+    placeholder="Street"
     value={newStudent.street}
     onChange={this.streetChange}
   />

@@ -28,13 +28,13 @@ class StudentItem extends React.Component {
     return (
       <div className="student-div">
         <Row>
-          <Col className="col-sm-4">
+          <Col className="col-sm-4 mt-2">
             <h3 onClick={this.studentClick}>{student.firstName} {student.lastName}</h3>
           </Col>
-          <Col className="col-sm-4">
+          <Col className="col-sm-4 mt-2">
           <h3>{student.grade}</h3>
           </Col>
-          <Col className="col-sm-4">
+          <Col className="col-sm-4 mt-2">
           <h3><span><button className="btn btn-danger" onClick={this.deleteStudent}>DELETE</button></span></h3>
           </Col>
         </Row>

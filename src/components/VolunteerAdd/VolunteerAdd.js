@@ -73,7 +73,7 @@ class VolunteerAdd extends React.Component {
       return (
             <div className="listing-form col">
                 <h1>Add Volunteer</h1>
-                <form onSubmit={this.formSubmit} autoComplete="off">
+                <form onSubmit={this.formSubmit} autoComplete="off" className="add-edit-form">
 
 <div className="form-group">
   <label htmlFor="firstName">First Name:</label>
@@ -82,7 +82,7 @@ class VolunteerAdd extends React.Component {
     className="form-control"
     id="firstName"
     aria-describedby="firstName"
-    placeholder="firstName"
+    placeholder="First Name"
     value={newVolunteer.firstName}
     onChange={this.firstNameChange}
   />
@@ -95,7 +95,7 @@ class VolunteerAdd extends React.Component {
     className="form-control"
     id="lastName"
     aria-describedby="lastName"
-    placeholder="lastName"
+    placeholder="Last Name"
     value={newVolunteer.lastName}
     onChange={this.lastNameChange}
   />
@@ -108,7 +108,7 @@ class VolunteerAdd extends React.Component {
     className="form-control"
     id="street"
     aria-describedby="street"
-    placeholder="street"
+    placeholder="Street"
     value={newVolunteer.street}
     onChange={this.streetChange}
   />
@@ -121,7 +121,7 @@ class VolunteerAdd extends React.Component {
     className="form-control"
     id="city"
     aria-describedby="city"
-    placeholder="city"
+    placeholder="City"
     value={newVolunteer.city}
     onChange={this.cityChange}
   />

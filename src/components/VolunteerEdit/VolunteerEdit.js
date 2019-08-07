@@ -73,7 +73,7 @@ class VolunteerEdit extends React.Component {
       return (
             <div className="listing-form col">
                 <h1>Edit Volunteer</h1>
-                <form onSubmit={this.formSubmit} autoComplete="off">
+                <form onSubmit={this.formSubmit} autoComplete="off" className="add-edit-form">
                 <div className="form-group">
   <label htmlFor="firstName">First Name:</label>
   <input

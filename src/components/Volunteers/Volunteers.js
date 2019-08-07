@@ -70,14 +70,14 @@ class Volunteers extends React.Component {
     ));
     return (
       <div>
-        <NavLink tag={RRNavLink} to='/volunteeradd'><button className="btn btn-light">Add Volunteer</button></NavLink>
+        <h1>Volunteers</h1>
+        <NavLink tag={RRNavLink} to='/volunteeradd'><i class="fas fa-plus-circle fa-3x"></i></NavLink>
         <SearchField
             placeholder="Search Volunteers"
             onChange={ this.onChange }
             searchText=""
             classNames="search-bar"
           />
-        <h1>Volunteers</h1>
         <h3>{volunteerItemComponents}</h3>
       </div>
     );

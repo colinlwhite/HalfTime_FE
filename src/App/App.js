@@ -1,4 +1,5 @@
 import React from 'react';
+import Darkmode from 'darkmode-js';
 import {
   BrowserRouter, Route, Switch,
 } from 'react-router-dom';
@@ -27,6 +28,20 @@ import VolunteerAdd from '../components/VolunteerAdd/VolunteerAdd';
 import Volunteers from '../components/Volunteers/Volunteers';
 import './App.scss';
 
+const options = {
+  bottom: '64px', // default: '32px'
+  right: '32px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#d1ccc0', // default: '#fff'
+  buttonColorDark: 'black', // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: false, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true, // default: true
+};
+
 class App extends React.Component {
   state = {
     userObject: {},
@@ -34,6 +49,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    const darkmode = new Darkmode(options);
+    darkmode.showWidget();
     authRequests.getUser()
       .then((user) => {
         this.setState({

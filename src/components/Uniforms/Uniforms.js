@@ -47,8 +47,8 @@ class Uniforms extends React.Component {
     ));
     return (
       <div>
-        <NavLink tag={RRNavLink} to='/uniformadd'><button className="btn btn-light">Add Uniform</button></NavLink>
         <h1>Uniforms</h1>
+        <NavLink tag={RRNavLink} to='/uniformadd'><i class="fas fa-plus-circle fa-3x"></i></NavLink>
         <h3>{uniformItemComponents}</h3>
       </div>
     );

@@ -70,14 +70,14 @@ class Students extends React.Component {
     ));
     return (
       <div>
-        <NavLink tag={RRNavLink} to='/studentadd'><button className="btn btn-light">Add Student</button></NavLink>
+        <h1>Students</h1>
+        <NavLink tag={RRNavLink} to='/studentadd'><i class="fas fa-plus-circle fa-3x"></i></NavLink>
         <SearchField
             placeholder="Search Students"
             onChange={ this.onChange }
             searchText=""
             classNames="search-bar"
           />
-        <h1>Students</h1>
         <h3>{studentItemComponents}</h3>
       </div>
     );

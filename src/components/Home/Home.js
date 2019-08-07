@@ -4,52 +4,44 @@ import './Home.scss';
 
 class Home extends React.Component {
   changeView = (e) => {
-    // current target goes straight to where the onClick function is
     const view = e.currentTarget.id;
-    // const view = e.target.closest('.card').id;
     this.props.history.push(`/${view}`);
   }
 
   render() {
     return (
-      <div className='Home mx-auto'>
+      <div className='Home w-75 mx-auto'>
       <div className="card-deck">
-        <div className="card border-dark" id="instruments" onClick={this.changeView}>
+        <div className="animated slideInLeft card border-dark mt-4" id="instruments" onClick={this.changeView}>
           <div className="card-body text-center">
-            <h4 className="card-title"><i className="fas fa-comments fa-7x"></i></h4>
-            <h6 className="card-subtitle mb-2 text-muted">Instruments</h6>
+            <h4 className="card-title"><i className="fas fa-music fa-7x"></i></h4>
+            <h6 className="card-subtitle mb-2">Instruments</h6>
           </div>
         </div>
-        <div className="card border-dark" id='students' onClick={this.changeView}>
+        <div className="animated slideInDown card border-dark mt-4" id='students' onClick={this.changeView}>
           <div className="card-body text-center">
             <h4 className="card-title"><i className="fas fa-user-friends fa-7x"></i></h4>
-            <h6 className="card-subtitle mb-2 text-muted">Students</h6>
+            <h6 className="card-subtitle mb-2">Students</h6>
           </div>
         </div>
-        <div className="card border-dark" id='uniforms' onClick={this.changeView}>
+        <div className="animated slideInRight card border-dark mt-4" id='uniforms' onClick={this.changeView}>
           <div className="card-body text-center">
-            <h4 className="card-title"><i className="fas fa-sun fa-7x"></i></h4>
-            <h6 className="card-subtitle mb-2 text-muted">Uniforms</h6>
+            <h4 className="card-title"><i className="fas fa-tshirt fa-7x"></i></h4>
+            <h6 className="card-subtitle mb-2">Uniforms</h6>
           </div>
         </div>
       </div>
       <div className="card-deck">
-        <div className="card border-dark" id='events' onClick={this.changeView}>
+        <div className="animated slideInLeft card border-dark mt-4" id='events' onClick={this.changeView}>
           <div className="card-body text-center">
             <h4 className="card-title"><i className="fas fa-calendar-alt fa-7x"></i></h4>
-            <h6 className="card-subtitle mb-2 text-muted">Events</h6>
+            <h6 className="card-subtitle mb-2">Events</h6>
           </div>
         </div>
-        <div className="card border-dark bg-warning">
+        <div className="animated slideInRight card border-dark mt-4" id='volunteers' onClick={this.changeView}>
           <div className="card-body text-center">
-            <h4 className="card-title"><i className="fas fa-tree fa-7x"></i></h4>
-            <h6 className="card-subtitle mb-2 text-muted">HalfTime</h6>
-          </div>
-        </div>
-        <div className="card border-dark" id='volunteers' onClick={this.changeView}>
-          <div className="card-body text-center">
-            <h4 className="card-title"><i className="fas fa-newspaper fa-7x"></i></h4>
-            <h6 className="card-subtitle mb-2 text-muted">Volunteers</h6>
+            <h4 className="card-title"><i className="fas fa-users fa-7x"></i></h4>
+            <h6 className="card-subtitle mb-2">Volunteers</h6>
           </div>
         </div>
       </div>

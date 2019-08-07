@@ -71,14 +71,14 @@ class Instruments extends React.Component {
     ));
     return (
       <div>
-        <NavLink tag={RRNavLink} to='/instrumentadd'><button className="btn btn-light">Add Instrument</button></NavLink>
+        <h1>Instruments</h1>
+        <NavLink tag={RRNavLink} to='/instrumentadd'><i class="fas fa-plus-circle fa-3x"></i></NavLink>
         <SearchField
             placeholder="Search Instruments"
             onChange={ this.onChange }
             searchText=""
             classNames="search-bar"
           />
-        <h1>Instruments</h1>
         <h3>{instrumentItemComponents}</h3>
       </div>
     );

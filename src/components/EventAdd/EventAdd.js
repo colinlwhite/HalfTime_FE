@@ -229,7 +229,8 @@ class EventAdd extends React.Component {
     onChange={this.zipCodeChange}
   />
 </div>
-<button className="btn btn-light">SAVE</button>
+{/* <button className="btn btn-light">SAVE</button> */}
+<button><i class="fas fa-check-circle fa-3x"></i></button>
 </form>
             </div>
       );

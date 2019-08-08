@@ -22,7 +22,7 @@ class EventItem extends React.Component {
         <div className="card" style={{ width: '18rem' }}>
             <h2 onClick={this.eventClick} className="card-text">{event.name}</h2>
             <h2 className="card-text">{utility.dateFormat(event.date)}</h2>
-            <h6>{event.type}</h6>
+            <h3>{event.type}</h3>
             <span><button className="btn btn-danger mb-2" onClick={this.deleteEvent}>DELETE</button></span>
         </div>
     </div>

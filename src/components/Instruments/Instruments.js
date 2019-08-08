@@ -1,7 +1,16 @@
 import React from 'react';
+import {
+  Button,
+  Row,
+  Col,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  NavLink,
+} from 'reactstrap';
 import SearchField from 'react-search-field';
 import { NavLink as RRNavLink, withRouter } from 'react-router-dom';
-import { NavLink } from 'reactstrap';
 import instrumentRequests from '../../helpers/data/instrumentRequests';
 import InstrumentItem from '../InstrumentItem/InstrumentItem';
 import './Instruments.scss';
@@ -81,6 +90,19 @@ class Instruments extends React.Component {
             searchText=""
             classNames="search-bar"
           />
+          <div className="instrument-table-header">
+          <Row>
+            <Col className="col-sm-4 mt-2">
+              <h3>MODEL #</h3>
+            </Col>
+            <Col className="col-sm-4 mt-2">
+              <h3>TYPE</h3>
+            </Col>
+            <Col className="col-sm-4 mt-2">
+              <h3>ACTION</h3>
+            </Col>
+          </Row>
+          </div>
         <h3>{instrumentItemComponents}</h3>
       </div>
     );

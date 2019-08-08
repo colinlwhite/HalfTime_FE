@@ -1,7 +1,11 @@
 import React from 'react';
+import {
+  Row,
+  Col,
+  NavLink,
+} from 'reactstrap';
 import SearchField from 'react-search-field';
 import { NavLink as RRNavLink, withRouter } from 'react-router-dom';
-import { NavLink } from 'reactstrap';
 import volunteerRequests from '../../helpers/data/volunteerRequests';
 import VolunteerItem from '../VolunteerItem/VolunteerItem';
 import './Volunteers.scss';
@@ -80,6 +84,19 @@ class Volunteers extends React.Component {
             searchText=""
             classNames="search-bar"
           />
+          <div className="volunteer-table-header">
+          <Row>
+            <Col className="col-sm-4 mt-2">
+              <h3>NAME</h3>
+            </Col>
+            <Col className="col-sm-4 mt-2">
+              <h3>STREET</h3>
+            </Col>
+            <Col className="col-sm-4 mt-2">
+              <h3>ACTION</h3>
+            </Col>
+          </Row>
+          </div>
         <h3>{volunteerItemComponents}</h3>
       </div>
     );

@@ -1,6 +1,15 @@
 import React from 'react';
+import {
+  Button,
+  Row,
+  Col,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  NavLink,
+} from 'reactstrap';
 import { NavLink as RRNavLink, withRouter } from 'react-router-dom';
-import { NavLink } from 'reactstrap';
 import uniformRequests from '../../helpers/data/uniformRequests';
 import UniformItem from '../UniformItem/UniformItem';
 import './Uniforms.scss';
@@ -51,6 +60,19 @@ class Uniforms extends React.Component {
         <NavLink className="animated fadeIn"
         tag={RRNavLink} to='/uniformadd'><i class="fas fa-plus-circle fa-3x"></i>
         </NavLink>
+        <div className="uniform-table-header">
+          <Row>
+            <Col className="col-sm-4 mt-2">
+              <h3>ID#</h3>
+            </Col>
+            <Col className="col-sm-4 mt-2">
+              <h3>SIZE</h3>
+            </Col>
+            <Col className="col-sm-4 mt-2">
+              <h3>ACTION</h3>
+            </Col>
+          </Row>
+          </div>
         <h3>{uniformItemComponents}</h3>
       </div>
     );

@@ -1,7 +1,16 @@
 import React from 'react';
+import {
+  Button,
+  Row,
+  Col,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  NavLink,
+} from 'reactstrap';
 import SearchField from 'react-search-field';
 import { NavLink as RRNavLink, withRouter } from 'react-router-dom';
-import { NavLink } from 'reactstrap';
 import studentRequests from '../../helpers/data/studentRequests';
 import StudentItem from '../StudentItem/StudentItem';
 import './Students.scss';
@@ -80,6 +89,19 @@ class Students extends React.Component {
             searchText=""
             classNames="search-bar"
           />
+          <div className="student-table-header">
+          <Row>
+            <Col className="col-sm-4 mt-2">
+              <h3>NAME</h3>
+            </Col>
+            <Col className="col-sm-4 mt-2">
+              <h3>GRADE</h3>
+            </Col>
+            <Col className="col-sm-4 mt-2">
+              <h3>ACTION</h3>
+            </Col>
+          </Row>
+          </div>
         <h3>{studentItemComponents}</h3>
       </div>
     );

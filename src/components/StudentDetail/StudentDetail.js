@@ -36,7 +36,7 @@ class StudentDetail extends React.Component {
       <div>
         <h1>Student Details</h1>
         <button onClick={this.backToStudentsView}>BACK TO STUDENTS</button>
-<div className="card mx-auto mt-4 detail-card" style={{ width: '35%' }}>
+<div className="card mx-auto mt-4 detail-card animated zoomIn" style={{ width: '35%' }}>
     <div class="card-body">
       <Row className="student-body">
           <Col className="col-sm-6">

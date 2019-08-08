@@ -26,7 +26,7 @@ class UniformItem extends React.Component {
   render() {
     const { uniform } = this.props;
     return (
-      <div className="uniform-div">
+      <div className="uniform-div animated slideInUp">
         <Row>
           <Col className="col-sm-4 mt-2">
             <h2>{uniform.studentId}</h2>

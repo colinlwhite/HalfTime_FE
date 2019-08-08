@@ -71,8 +71,10 @@ class Instruments extends React.Component {
     ));
     return (
       <div>
-        <h1>Instruments</h1>
-        <NavLink tag={RRNavLink} to='/instrumentadd'><i class="fas fa-plus-circle fa-3x"></i></NavLink>
+        <h1 className="animated slideInDown">Instruments</h1>
+        <NavLink className="animated fadeIn"
+        tag={RRNavLink} to='/instrumentadd'><i class="fas fa-plus-circle fa-3x"></i>
+        </NavLink>
         <SearchField
             placeholder="Search Instruments"
             onChange={ this.onChange }

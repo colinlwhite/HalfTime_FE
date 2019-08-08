@@ -51,8 +51,10 @@ class Events extends React.Component {
     ));
     return (
       <div>
-        <h1>Events</h1>
-        <NavLink tag={RRNavLink} to='/eventadd'><i class="fas fa-plus-circle fa-3x"></i></NavLink>
+        <h1 className="animated slideInDown">Events</h1>
+        <NavLink className="animated fadeIn"
+        tag={RRNavLink} to='/eventadd'><i class="fas fa-plus-circle fa-3x"></i>
+        </NavLink>
         <span><button className="btn btn-primary" onClick={this.sendTextMessage}>
           SEND NEXT EVENT REMINDER
           </button></span>

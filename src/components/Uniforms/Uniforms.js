@@ -47,8 +47,10 @@ class Uniforms extends React.Component {
     ));
     return (
       <div>
-        <h1>Uniforms</h1>
-        <NavLink tag={RRNavLink} to='/uniformadd'><i class="fas fa-plus-circle fa-3x"></i></NavLink>
+        <h1 className="animated slideInDown">Uniforms</h1>
+        <NavLink className="animated fadeIn"
+        tag={RRNavLink} to='/uniformadd'><i class="fas fa-plus-circle fa-3x"></i>
+        </NavLink>
         <h3>{uniformItemComponents}</h3>
       </div>
     );

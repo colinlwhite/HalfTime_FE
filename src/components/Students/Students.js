@@ -70,8 +70,10 @@ class Students extends React.Component {
     ));
     return (
       <div>
-        <h1>Students</h1>
-        <NavLink tag={RRNavLink} to='/studentadd'><i class="fas fa-plus-circle fa-3x"></i></NavLink>
+        <h1 className="animated slideInDown">Students</h1>
+        <NavLink className="animated fadeIn"
+        tag={RRNavLink} to='/studentadd'><i class="fas fa-plus-circle fa-3x"></i>
+        </NavLink>
         <SearchField
             placeholder="Search Students"
             onChange={ this.onChange }

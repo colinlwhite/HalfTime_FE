@@ -26,7 +26,7 @@ class StudentItem extends React.Component {
   render() {
     const { student } = this.props;
     return (
-      <div className="student-div">
+      <div className="student-div animated slideInUp">
         <Row>
           <Col className="col-sm-4 mt-2">
             <h3 onClick={this.studentClick}>{student.firstName} {student.lastName}</h3>

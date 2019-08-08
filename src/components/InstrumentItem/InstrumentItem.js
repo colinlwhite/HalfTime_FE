@@ -26,7 +26,7 @@ class InstrumentItem extends React.Component {
   render() {
     const { instrument } = this.props;
     return (
-      <div className="instrument-div">
+      <div className="instrument-div animated slideInUp">
         <Row>
           <Col className="col-sm-4 mt-2">
             <h2 onClick={this.instrumentClick}>{instrument.modelNumber}</h2>

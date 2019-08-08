@@ -26,7 +26,7 @@ class VolunteerItem extends React.Component {
   render() {
     const { volunteer } = this.props;
     return (
-      <div className="volunteer-div">
+      <div className="volunteer-div animated slideInUp">
         <Row>
           <Col className="col-sm-4 mt-2">
           <h2 onClick={this.volunteerClick}>{volunteer.firstName} {volunteer.lastName}</h2>

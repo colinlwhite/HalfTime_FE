@@ -1,4 +1,13 @@
 import React from 'react';
+import {
+  Button,
+  Row,
+  Col,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+} from 'reactstrap';
 import { withRouter } from 'react-router-dom';
 import './StudentItem.scss';
 
@@ -17,9 +26,18 @@ class StudentItem extends React.Component {
   render() {
     const { student } = this.props;
     return (
-      <div className="student-div">
-        <h2 onClick={this.studentClick}>{student.firstName}</h2>
-        <span><button className="btn btn-danger" onClick={this.deleteStudent}>DELETE</button></span>
+      <div className="student-div animated slideInUp">
+        <Row>
+          <Col className="col-sm-4 mt-2">
+            <h3 onClick={this.studentClick}>{student.firstName} {student.lastName}</h3>
+          </Col>
+          <Col className="col-sm-4 mt-2">
+          <h3>{student.grade}</h3>
+          </Col>
+          <Col className="col-sm-4 mt-2">
+          <h3><span><button className="btn btn-danger" onClick={this.deleteStudent}>DELETE</button></span></h3>
+          </Col>
+        </Row>
       </div>
     );
   }

@@ -1,4 +1,13 @@
 import React from 'react';
+import {
+  Button,
+  Row,
+  Col,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+} from 'reactstrap';
 import { withRouter } from 'react-router-dom';
 import './UniformItem.scss';
 
@@ -17,9 +26,18 @@ class UniformItem extends React.Component {
   render() {
     const { uniform } = this.props;
     return (
-      <div className="uniform-div">
-        <h2 onClick={this.uniformClick}>{uniform.studentId} {uniform.size}</h2>
-        <span><button className="btn btn-danger" onClick={this.deleteUniform}>DELETE</button></span>
+      <div className="uniform-div animated slideInUp">
+        <Row>
+          <Col className="col-sm-4 mt-2">
+            <h2>{uniform.studentId}</h2>
+          </Col>
+          <Col className="col-sm-4 mt-2">
+            <h2 onClick={this.uniformClick}>{uniform.size}</h2>
+          </Col>
+          <Col className="col-sm-4 mt-2">
+            <span><button className="btn btn-danger" onClick={this.deleteUniform}>DELETE</button></span>
+          </Col>
+        </Row>
       </div>
     );
   }

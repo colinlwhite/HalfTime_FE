@@ -1,7 +1,11 @@
 import React from 'react';
+import {
+  Row,
+  Col,
+  NavLink,
+} from 'reactstrap';
 import SearchField from 'react-search-field';
 import { NavLink as RRNavLink, withRouter } from 'react-router-dom';
-import { NavLink } from 'reactstrap';
 import volunteerRequests from '../../helpers/data/volunteerRequests';
 import VolunteerItem from '../VolunteerItem/VolunteerItem';
 import './Volunteers.scss';
@@ -70,14 +74,29 @@ class Volunteers extends React.Component {
     ));
     return (
       <div>
-        <NavLink tag={RRNavLink} to='/volunteeradd'><button className="btn btn-light">Add Volunteer</button></NavLink>
+        <h1 className="animated slideInDown">Volunteers</h1>
+        <NavLink className="animated fadeIn"
+        tag={RRNavLink} to='/volunteeradd'><i class="fas fa-plus-circle fa-3x"></i>
+        </NavLink>
         <SearchField
             placeholder="Search Volunteers"
             onChange={ this.onChange }
             searchText=""
             classNames="search-bar"
           />
-        <h1>Volunteers</h1>
+          <div className="volunteer-table-header">
+          <Row>
+            <Col className="col-sm-4 mt-2">
+              <h3>NAME</h3>
+            </Col>
+            <Col className="col-sm-4 mt-2">
+              <h3>STREET</h3>
+            </Col>
+            <Col className="col-sm-4 mt-2">
+              <h3>ACTION</h3>
+            </Col>
+          </Row>
+          </div>
         <h3>{volunteerItemComponents}</h3>
       </div>
     );

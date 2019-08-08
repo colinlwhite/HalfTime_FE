@@ -1,7 +1,16 @@
 import React from 'react';
+import {
+  Button,
+  Row,
+  Col,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  NavLink,
+} from 'reactstrap';
 import SearchField from 'react-search-field';
 import { NavLink as RRNavLink, withRouter } from 'react-router-dom';
-import { NavLink } from 'reactstrap';
 import studentRequests from '../../helpers/data/studentRequests';
 import StudentItem from '../StudentItem/StudentItem';
 import './Students.scss';
@@ -70,14 +79,29 @@ class Students extends React.Component {
     ));
     return (
       <div>
-        <NavLink tag={RRNavLink} to='/studentadd'><button className="btn btn-light">Add Student</button></NavLink>
+        <h1 className="animated slideInDown">Students</h1>
+        <NavLink className="animated fadeIn"
+        tag={RRNavLink} to='/studentadd'><i class="fas fa-plus-circle fa-3x"></i>
+        </NavLink>
         <SearchField
             placeholder="Search Students"
             onChange={ this.onChange }
             searchText=""
             classNames="search-bar"
           />
-        <h1>Students</h1>
+          <div className="student-table-header">
+          <Row>
+            <Col className="col-sm-4 mt-2">
+              <h3>NAME</h3>
+            </Col>
+            <Col className="col-sm-4 mt-2">
+              <h3>GRADE</h3>
+            </Col>
+            <Col className="col-sm-4 mt-2">
+              <h3>ACTION</h3>
+            </Col>
+          </Row>
+          </div>
         <h3>{studentItemComponents}</h3>
       </div>
     );

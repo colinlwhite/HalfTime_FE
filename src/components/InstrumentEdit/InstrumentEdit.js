@@ -13,177 +13,195 @@ import instrumentRequests from '../../helpers/data/instrumentRequests';
 import './InstrumentEdit.scss';
 
 class InstrumentEdit extends React.Component {
-    state = {
-      newInstrument: {},
-    }
+  state = {
+    newInstrument: {},
+  }
 
-    formSubmitInstrumentEdit = (newInstrument) => {
-      const instrumentId = this.props.match.params.id;
-      instrumentRequests.updateInstrument(instrumentId, newInstrument)
-        .then(() => {
-          this.props.history.push('/instruments');
-        });
-    }
+  formSubmitInstrumentEdit = (newInstrument) => {
+    const instrumentId = this.props.match.params.id;
+    instrumentRequests.updateInstrument(instrumentId, newInstrument)
+      .then(() => {
+        this.props.history.push('/instruments');
+      });
+  }
 
-    formFieldStringState = (name, e) => {
-      e.preventDefault();
-      const tempInstrument = { ...this.state.newInstrument };
-      tempInstrument[name] = e.target.value;
-      this.setState({ newInstrument: tempInstrument });
-    }
+  formFieldStringState = (name, e) => {
+    e.preventDefault();
+    const tempInstrument = { ...this.state.newInstrument };
+    tempInstrument[name] = e.target.value;
+    this.setState({ newInstrument: tempInstrument });
+  }
 
-    formFieldNumberState = (name, e) => {
-      e.preventDefault();
-      const tempInstrument = { ...this.state.newInstrument };
-      tempInstrument[name] = e.target.value * 1;
-      this.setState({ newInstrument: tempInstrument });
-    }
+  formFieldNumberState = (name, e) => {
+    e.preventDefault();
+    const tempInstrument = { ...this.state.newInstrument };
+    tempInstrument[name] = e.target.value * 1;
+    this.setState({ newInstrument: tempInstrument });
+  }
 
-    brandChange = e => this.formFieldStringState('brand', e);
+  brandChange = e => this.formFieldStringState('brand', e);
 
-    categoryChange = e => this.formFieldStringState('category', e);
+  categoryChange = e => this.formFieldStringState('category', e);
 
-    conditionChange = e => this.formFieldStringState('condition', e);
+  conditionChange = e => this.formFieldStringState('condition', e);
 
-    descriptionChange = e => this.formFieldStringState('description', e);
+  descriptionChange = e => this.formFieldStringState('description', e);
 
-    idChange = e => this.formFieldNumberState('id', e);
+  idChange = e => this.formFieldNumberState('id', e);
 
-    modelNumberChange = e => this.formFieldStringState('modelNumber', e);
+  modelNumberChange = e => this.formFieldStringState('modelNumber', e);
 
-    nameChange = e => this.formFieldStringState('name', e);
+  nameChange = e => this.formFieldStringState('name', e);
 
-    studentIdChange = e => this.formFieldNumberState('studentId', e);
+  studentIdChange = e => this.formFieldNumberState('studentId', e);
 
-    formSubmit = (e) => {
-      e.preventDefault();
-      const myInstrument = { ...this.state.newInstrument };
-      this.formSubmitInstrumentEdit(myInstrument);
-    }
+  formSubmit = (e) => {
+    e.preventDefault();
+    const myInstrument = { ...this.state.newInstrument };
+    this.formSubmitInstrumentEdit(myInstrument);
+  }
 
-    componentDidMount() {
-      const instrumentId = this.props.match.params.id;
-      instrumentRequests.getSingleInstrument(instrumentId)
-        .then((instrument) => {
-          this.setState({ newInstrument: instrument });
-        })
-        .catch(err => console.error('error with single instrument', err));
-    }
+  componentDidMount() {
+    const instrumentId = this.props.match.params.id;
+    instrumentRequests.getSingleInstrument(instrumentId)
+      .then((instrument) => {
+        this.setState({ newInstrument: instrument });
+      })
+      .catch(err => console.error('error with single instrument', err));
+  }
 
-    render() {
-      const { newInstrument } = this.state;
-      return (
-            <div className="listing-form col">
-                <h1>Edit Instrument</h1>
-                <form onSubmit={this.formSubmit} autoComplete="off">
-                <div className="form-group">
-  <label htmlFor="brand">Brand:</label>
-  <input
-    type="text"
-    className="form-control"
-    id="brand"
-    aria-describedby="brand"
-    placeholder="brand"
-    value={newInstrument.brand}
-    onChange={this.brandChange}
-  />
-</div>
+  render() {
+    const { newInstrument } = this.state;
+    return (
+      <div className="listing-form col">
+        <h1>Edit Instrument</h1>
+        <form onSubmit={this.formSubmit} autoComplete="off" className="add-edit-form">
 
-<FormGroup className="form-group">
-    <Label htmlFor="category">Category:</Label>
-      <Input type="select" onChange={this.categoryChange} value={newInstrument.category}>
-      <option>Auxiliary</option>
-      <option>Brass</option>
-      <option>Drumline</option>
-      <option>Front Ensemble</option>
-      <option>Woodwinds</option>
-      </Input>
-  </FormGroup>
+          <Row>
+            <Col className="col-md-6">
+              <div className="form-group">
+                <label htmlFor="brand">Brand:</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="brand"
+                  aria-describedby="brand"
+                  placeholder="Brand"
+                  value={newInstrument.brand}
+                  onChange={this.brandChange}
+                />
+              </div>
+            </Col>
+            <Col className="col-md-6">
+              <FormGroup className="form-group">
+                <Label htmlFor="category">Category:</Label>
+                <Input type="select" onChange={this.categoryChange} value={newInstrument.category}>
+                  <option>Auxiliary</option>
+                  <option>Brass</option>
+                  <option>Drumline</option>
+                  <option>Front Ensemble</option>
+                  <option>Woodwinds</option>
+                </Input>
+              </FormGroup>
+            </Col>
+          </Row>
+          <Row>
+            <Col className="col-md-6">
+              <FormGroup className="form-group">
+                <Label htmlFor="condition">Condition:</Label>
+                <Input type="select" onChange={this.conditionChange} value={newInstrument.condition}>
+                  <option>Just Got It</option>
+                  <option>Just Like New</option>
+                  <option>Excellent</option>
+                  <option>Very Good</option>
+                  <option>Good</option>
+                  <option>Fair</option>
+                  <option>Poor</option>
+                  <option>Doesn't Work</option>
+                </Input>
+              </FormGroup>
+            </Col>
+            <Col className="col-md-6">
+              <div className="form-group">
+                <label htmlFor="description">Description:</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="description"
+                  aria-describedby="description"
+                  placeholder="Description"
+                  value={newInstrument.description}
+                  onChange={this.descriptionChange}
+                />
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col className="col-md-6">
+              <div className="form-group">
+                <label htmlFor="state">ID:</label>
+                <input
+                  type="number"
+                  className="form-control"
+                  id="id"
+                  aria-describedby="id"
+                  placeholder="ID"
+                  value={newInstrument.id}
+                  onChange={this.idChange}
+                />
+              </div>
+            </Col>
+            <Col className="col-md-6">
+              <div className="form-group">
+                <label htmlFor="modelNumber">Model Number:</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="modelNumber"
+                  aria-describedby="modelNumber"
+                  placeholder="Model Number"
+                  value={newInstrument.modelNumber}
+                  onChange={this.modelNumberChange}
+                />
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col className="col-md-6">
+              <div className="form-group">
+                <label htmlFor="name">Name:</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="name"
+                  aria-describedby="Name"
+                  placeholder="Name"
+                  value={newInstrument.name}
+                  onChange={this.nameChange}
+                />
+              </div>
+            </Col>
+            <Col className="col-md-6">
+              <div className="form-group">
+                <label htmlFor="studentId">Student ID:</label>
+                <input
+                  type="number"
+                  className="form-control"
+                  id="studentId"
+                  aria-describedby="studentId"
+                  placeholder=""
+                  value={newInstrument.studentId}
+                  onChange={this.studentIdChange}
+                />
+              </div>
+            </Col>
+          </Row>
+          <button className="btn btn-light">SAVE</button>
 
-<FormGroup className="form-group">
-    <Label htmlFor="condition">Condition:</Label>
-      <Input type="select" onChange={this.conditionChange} value={newInstrument.condition}>
-      <option>Just Got It</option>
-      <option>Just Like New</option>
-      <option>Excellent</option>
-      <option>Very Good</option>
-      <option>Good</option>
-      <option>Fair</option>
-      <option>Poor</option>
-      <option>Doesn't Work</option>
-      </Input>
-  </FormGroup>
-
-<div className="form-group">
-  <label htmlFor="description">Description:</label>
-  <input
-    type="text"
-    className="form-control"
-    id="description"
-    aria-describedby="description"
-    placeholder="description"
-    value={newInstrument.description}
-    onChange={this.descriptionChange}
-  />
-</div>
-
-<div className="form-group">
-  <label htmlFor="state">ID:</label>
-  <input
-    type="number"
-    className="form-control"
-    id="id"
-    aria-describedby="id"
-    placeholder="ID"
-    value={newInstrument.id}
-    onChange={this.idChange}
-  />
-</div>
-
-<div className="form-group">
-  <label htmlFor="modelNumber">Model Number:</label>
-  <input
-    type="text"
-    className="form-control"
-    id="modelNumber"
-    aria-describedby="modelNumber"
-    placeholder="Model Number"
-    value={newInstrument.modelNumber}
-    onChange={this.modelNumberChange}
-  />
-</div>
-
-<div className="form-group">
-  <label htmlFor="name">Name:</label>
-  <input
-    type="text"
-    className="form-control"
-    id="name"
-    aria-describedby="Name"
-    placeholder="Name"
-    value={newInstrument.name}
-    onChange={this.nameChange}
-  />
-</div>
-
-<div className="form-group">
-  <label htmlFor="studentId">Student ID:</label>
-  <input
-    type="number"
-    className="form-control"
-    id="studentId"
-    aria-describedby="studentId"
-    placeholder="0"
-    value={newInstrument.studentId}
-    onChange={this.studentIdChange}
-  />
-</div>
-<button className="btn btn-light">SAVE</button>
-
-                </form>
-            </div>
-      );
-    }
+        </form>
+      </div>
+    );
+  }
 }
 
 export default withRouter(InstrumentEdit);

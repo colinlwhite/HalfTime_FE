@@ -1,4 +1,13 @@
 import React from 'react';
+import {
+  Button,
+  Row,
+  Col,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+} from 'reactstrap';
 import { withRouter } from 'react-router-dom';
 import './InstrumentItem.scss';
 
@@ -17,9 +26,18 @@ class InstrumentItem extends React.Component {
   render() {
     const { instrument } = this.props;
     return (
-      <div className="instrument-div">
-        <h2 onClick={this.instrumentClick}>{instrument.modelNumber}</h2>
-        <span><button className="btn btn-danger" onClick={this.deleteInstrument}>DELETE</button></span>
+      <div className="instrument-div animated slideInUp">
+        <Row>
+          <Col className="col-sm-4 mt-2">
+            <h2 onClick={this.instrumentClick}>{instrument.modelNumber}</h2>
+          </Col>
+          <Col className="col-sm-4 mt-2">
+            <h2>{instrument.name}</h2>
+          </Col>
+          <Col className="col-sm-4 mt-2">
+          <span><button className="btn btn-danger" onClick={this.deleteInstrument}>DELETE</button></span>
+          </Col>
+        </Row>
       </div>
     );
   }

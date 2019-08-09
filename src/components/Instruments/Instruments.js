@@ -93,13 +93,13 @@ class Instruments extends React.Component {
           <div className="instrument-table-header">
           <Row>
             <Col className="col-sm-4 mt-2">
-              <h3>MODEL #</h3>
+              <h3><strong>MODEL #</strong></h3>
             </Col>
             <Col className="col-sm-4 mt-2">
-              <h3>TYPE</h3>
+              <h3><strong>TYPE</strong></h3>
             </Col>
             <Col className="col-sm-4 mt-2">
-              <h3>ACTION</h3>
+              <h3><strong>ACTION</strong></h3>
             </Col>
           </Row>
           </div>

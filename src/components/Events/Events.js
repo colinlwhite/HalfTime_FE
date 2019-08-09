@@ -37,6 +37,7 @@ class Events extends React.Component {
 
   sendTextMessage = () => {
     eventRequests.sendSMS();
+    alert('A text reminder was sent to your volunteers about the upcoming event!');
   }
 
   render() {

@@ -63,13 +63,13 @@ class Uniforms extends React.Component {
         <div className="uniform-table-header">
           <Row>
             <Col className="col-sm-4 mt-2">
-              <h3>ID#</h3>
+              <h3><strong>ID#</strong></h3>
             </Col>
             <Col className="col-sm-4 mt-2">
-              <h3>SIZE</h3>
+              <h3><strong>SIZE</strong></h3>
             </Col>
             <Col className="col-sm-4 mt-2">
-              <h3>ACTION</h3>
+              <h3><strong>ACTION</strong></h3>
             </Col>
           </Row>
           </div>

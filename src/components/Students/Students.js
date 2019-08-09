@@ -92,13 +92,13 @@ class Students extends React.Component {
           <div className="student-table-header">
           <Row>
             <Col className="col-sm-4 mt-2">
-              <h3>NAME</h3>
+              <h3><strong>NAME</strong></h3>
             </Col>
             <Col className="col-sm-4 mt-2">
-              <h3>GRADE</h3>
+              <h3><strong>GRADE</strong></h3>
             </Col>
             <Col className="col-sm-4 mt-2">
-              <h3>ACTION</h3>
+              <h3><strong>ACTION</strong></h3>
             </Col>
           </Row>
           </div>

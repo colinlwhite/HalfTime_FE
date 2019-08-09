@@ -87,13 +87,13 @@ class Volunteers extends React.Component {
           <div className="volunteer-table-header">
           <Row>
             <Col className="col-sm-4 mt-2">
-              <h3>NAME</h3>
+              <h3><strong>NAME</strong></h3>
             </Col>
             <Col className="col-sm-4 mt-2">
-              <h3>STREET</h3>
+              <h3><strong>STREET</strong></h3>
             </Col>
             <Col className="col-sm-4 mt-2">
-              <h3>ACTION</h3>
+              <h3><strong>ACTION</strong></h3>
             </Col>
           </Row>
           </div>

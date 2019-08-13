@@ -1,9 +1,7 @@
 import React from 'react';
 import {
-  Button,
   Row,
   Col,
-  Form,
   FormGroup,
   Label,
   Input,
@@ -80,7 +78,7 @@ class EventEdit extends React.Component {
           <Row>
             <Col className="col-md-12">
               <div className="form-group">
-                <label htmlFor="name">Name:</label>
+                <label htmlFor="name"><strong>Name</strong></label>
                 <input
                   type="text"
                   className="form-control"
@@ -96,7 +94,7 @@ class EventEdit extends React.Component {
           <Row>
             <Col className="col-md-6">
               <FormGroup className="form-group">
-                <Label htmlFor="type">Type:</Label>
+                <Label htmlFor="type"><strong>Type</strong></Label>
                 <Input type="select" onChange={this.typeChange} value={newEvent.type}>
                   <option>Auditions</option>
                   <option>Community</option>
@@ -110,7 +108,7 @@ class EventEdit extends React.Component {
             </Col>
             <Col className="col-md-6">
               <div className="form-group">
-                <label htmlFor="description">Description:</label>
+                <label htmlFor="description"><strong>Description</strong></label>
                 <input
                   type="text"
                   className="form-control"
@@ -126,7 +124,7 @@ class EventEdit extends React.Component {
           <Row>
             <Col className="col-md-12">
               <div className="form-group">
-                <label htmlFor="street">Street:</label>
+                <label htmlFor="street"><strong>Street</strong></label>
                 <input
                   type="text"
                   className="form-control"
@@ -142,7 +140,7 @@ class EventEdit extends React.Component {
           <Row>
             <Col className="col-md-4">
               <div className="form-group">
-                <label htmlFor="city">City:</label>
+                <label htmlFor="city"><strong>City</strong></label>
                 <input
                   type="text"
                   className="form-control"
@@ -156,7 +154,7 @@ class EventEdit extends React.Component {
             </Col>
             <Col className="col-md-4">
               <FormGroup className="form-group">
-                <Label htmlFor="condition">State:</Label>
+                <Label htmlFor="condition"><strong>State</strong></Label>
                 <Input type="select" onChange={this.stateChange} value={newEvent.state}>
                   <option>AL</option>
                   <option>AK</option>
@@ -212,7 +210,7 @@ class EventEdit extends React.Component {
             </Col>
             <Col className="col-md-4">
               <div className="form-group">
-                <label htmlFor="zipcode">Zip Code:</label>
+                <label htmlFor="zipcode"><strong>Zip Code</strong></label>
                 <input
                   type="number"
                   className="form-control"

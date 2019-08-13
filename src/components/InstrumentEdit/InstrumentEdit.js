@@ -80,7 +80,7 @@ class InstrumentEdit extends React.Component {
           <Row>
             <Col className="col-md-6">
               <div className="form-group">
-                <label htmlFor="brand">Brand:</label>
+                <label htmlFor="brand"><strong>Brand</strong></label>
                 <input
                   type="text"
                   className="form-control"
@@ -94,7 +94,7 @@ class InstrumentEdit extends React.Component {
             </Col>
             <Col className="col-md-6">
               <FormGroup className="form-group">
-                <Label htmlFor="category">Category:</Label>
+                <Label htmlFor="category"><strong>Category</strong></Label>
                 <Input type="select" onChange={this.categoryChange} value={newInstrument.category}>
                   <option>Auxiliary</option>
                   <option>Brass</option>
@@ -108,7 +108,7 @@ class InstrumentEdit extends React.Component {
           <Row>
             <Col className="col-md-6">
               <FormGroup className="form-group">
-                <Label htmlFor="condition">Condition:</Label>
+                <Label htmlFor="condition"><strong>Condition</strong></Label>
                 <Input type="select" onChange={this.conditionChange} value={newInstrument.condition}>
                   <option>Just Got It</option>
                   <option>Just Like New</option>
@@ -123,7 +123,7 @@ class InstrumentEdit extends React.Component {
             </Col>
             <Col className="col-md-6">
               <div className="form-group">
-                <label htmlFor="description">Description:</label>
+                <label htmlFor="description"><strong>Description</strong></label>
                 <input
                   type="text"
                   className="form-control"
@@ -139,7 +139,7 @@ class InstrumentEdit extends React.Component {
           <Row>
             <Col className="col-md-6">
               <div className="form-group">
-                <label htmlFor="state">ID:</label>
+                <label htmlFor="state"><strong>ID</strong></label>
                 <input
                   type="number"
                   className="form-control"
@@ -153,7 +153,7 @@ class InstrumentEdit extends React.Component {
             </Col>
             <Col className="col-md-6">
               <div className="form-group">
-                <label htmlFor="modelNumber">Model Number:</label>
+                <label htmlFor="modelNumber"><strong>Model Number</strong></label>
                 <input
                   type="text"
                   className="form-control"
@@ -169,7 +169,7 @@ class InstrumentEdit extends React.Component {
           <Row>
             <Col className="col-md-6">
               <div className="form-group">
-                <label htmlFor="name">Name:</label>
+                <label htmlFor="name"><strong>Name</strong></label>
                 <input
                   type="text"
                   className="form-control"
@@ -183,7 +183,7 @@ class InstrumentEdit extends React.Component {
             </Col>
             <Col className="col-md-6">
               <div className="form-group">
-                <label htmlFor="studentId">Student ID:</label>
+                <label htmlFor="studentId"><strong>Student ID</strong></label>
                 <input
                   type="number"
                   className="form-control"

@@ -1,9 +1,7 @@
 import React from 'react';
 import {
-  Button,
   Row,
   Col,
-  Form,
   FormGroup,
   Label,
   Input,
@@ -87,7 +85,7 @@ class EventAdd extends React.Component {
           <Row>
             <Col className="col-md-12">
               <div className="form-group">
-                <label htmlFor="name">Name:</label>
+                <label htmlFor="name"><strong>Name</strong></label>
                 <input
                   type="text"
                   className="form-control"
@@ -104,7 +102,7 @@ class EventAdd extends React.Component {
             <Col className="col-md-12">
               {/* Date */}
               <div className="form-group">
-                <label className="date" htmlFor="date">Date:</label>
+                <label className="date" htmlFor="date"><strong>Date</strong></label>
                 <DatePicker
                   selected={this.state.newEvent.date}
                   onChange={this.handleDateChange}
@@ -120,7 +118,7 @@ class EventAdd extends React.Component {
           <Row>
             <Col className="col-md-6">
               <FormGroup className="form-group">
-                <Label htmlFor="type">Type:</Label>
+                <Label htmlFor="type"><strong>Type</strong></Label>
                 <Input type="select" onChange={this.typeChange} value={newEvent.type}>
                   <option>Auditions</option>
                   <option>Community</option>
@@ -134,7 +132,7 @@ class EventAdd extends React.Component {
             </Col>
             <Col className="col-md-6">
               <div className="form-group">
-                <label htmlFor="description">Description:</label>
+                <label htmlFor="description"><strong>Description</strong></label>
                 <input
                   type="text"
                   className="form-control"
@@ -150,7 +148,7 @@ class EventAdd extends React.Component {
           <Row>
             <Col className="col-md-12">
               <div className="form-group">
-                <label htmlFor="street">Street:</label>
+                <label htmlFor="street"><strong>Street</strong></label>
                 <input
                   type="text"
                   className="form-control"
@@ -166,7 +164,7 @@ class EventAdd extends React.Component {
           <Row>
             <Col className="col-md-4">
               <div className="form-group">
-                <label htmlFor="city">City:</label>
+                <label htmlFor="city"><strong>City</strong></label>
                 <input
                   type="text"
                   className="form-control"
@@ -180,7 +178,7 @@ class EventAdd extends React.Component {
             </Col>
             <Col className="col-md-4">
               <FormGroup className="form-group">
-                <Label htmlFor="condition">State:</Label>
+                <Label htmlFor="condition"><strong>State</strong></Label>
                 <Input type="select" onChange={this.stateChange} value={newEvent.state}>
                   <option>AL</option>
                   <option>AK</option>
@@ -236,7 +234,7 @@ class EventAdd extends React.Component {
             </Col>
             <Col className="col-md-4">
               <div className="form-group">
-                <label htmlFor="zipcode">Zip Code:</label>
+                <label htmlFor="zipcode"><strong>Zip Code</strong></label>
                 <input
                   type="number"
                   className="form-control"

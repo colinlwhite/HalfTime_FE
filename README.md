@@ -24,28 +24,37 @@ This is my Full Stack Capstone Project for Nashville Software School. HalfTime i
 ## Screen shots
 
 1. Home Page
-![mainview](./VolunteerWing/screenshots/LogInPage.png)
+![mainview](./screenshots/homepage.PNG)
 
-2. Students Page
-![mainview](./VolunteerWing/screenshots/userHomePage.png)
+2. Home Page (Dark Mode)
+![mainview](./screenshots/homepage_dm.PNG)
 
-3. Instruments Page
-![mainview](./VolunteerWing/screenshots/adminHomePage.png)
+3. Students Page
+![mainview](./screenshots/studentspage.PNG)
 
-4. Individual Instrument Page
-![mainview](./VolunteerWing/screenshots/profilePage.png)
+4. Students Page Add
+![mainview](./screenshots/studentpageadd.PNG)
 
-5. Individual Instrument Page (Dark Mode)
-![mainview](./VolunteerWing/screenshots/createEventPage.png)
+5. Instruments Page
+![mainview](./screenshots/instrumentspage.PNG)
 
-6. Uniforms Page
-![mainview](./VolunteerWing/screenshots/addTasksModal.png)
+6. Individual Instrument Page
+![mainview](./screenshots/singleinstrumentpage.PNG)
 
-7. Events Page
-![mainview](./VolunteerWing/screenshots/eventForInvitationPage.png)
+7. Individual Instrument Page (Dark Mode)
+![mainview](./screenshots/singleinstrumentpage_dm.PNG)
 
-8. Volunteers Page
-![mainview](./VolunteerWing/screenshots/sendInvitationModal.png)
+8. Uniforms Page
+![mainview](./screenshots/uniformpage.PNG)
+
+9. Events Page
+![mainview](./screenshots/eventspage.PNG)
+
+10. Events SMS Alert
+![mainview](./screenshots/smsalert.PNG)
+
+11. Volunteers Page
+![mainview](./screenshots/volunteerspage.PNG)
     
 
 ## Contributors:

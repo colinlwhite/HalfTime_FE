@@ -31,7 +31,7 @@ class EventDetail extends React.Component {
     return (
       <div>
         <h1>Event Details</h1>
-          <button onClick={this.backToEventsView}>BACK TO EVENTS</button>
+          <button class="btn btn-primary" onClick={this.backToEventsView}><i class="fas fa-arrow-circle-left fa-2x"></i></button>
             <div class="card mx-auto mt-4 animated zoomIn" style={{ width: '35%' }}>
               <div class="card-body">
                 <h5><strong>Name:</strong> {singleEvent.name}</h5>
@@ -42,7 +42,7 @@ class EventDetail extends React.Component {
                 <h5><strong>City:</strong> {singleEvent.city}</h5>
                 <h5><strong>State:</strong> {singleEvent.state}</h5>
                 <h5><strong>Zip Code:</strong> {singleEvent.zipCode}</h5>
-        <span><button className="btn btn-primary" onClick={this.editEvent}>EDIT</button></span>
+        <span><button className="btn btn-primary" onClick={this.editEvent}><i class="fas fa-pencil-alt fa-2x"></i></button></span>
         </div>
         </div>
 

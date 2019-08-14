@@ -55,7 +55,7 @@ class Students extends React.Component {
     } else {
       students.forEach((student) => {
         if (student.firstName.toLowerCase().includes(value.toLowerCase())
-        || student.lastName.toLowerCase().includes(value.toLowerCase())) {
+          || student.lastName.toLowerCase().includes(value.toLowerCase())) {
           filteredStudents.push(student);
         }
         this.setState({ filteredStudents });
@@ -71,25 +71,25 @@ class Students extends React.Component {
     const { filteredStudents } = this.state;
     const studentItemComponents = filteredStudents.map(student => (
       <StudentItem
-      key={student.id}
-      student={student}
-      deleteSingleStudent={this.deleteOneStudent}
-      onSelect={this.onSelect}
+        key={student.id}
+        student={student}
+        deleteSingleStudent={this.deleteOneStudent}
+        onSelect={this.onSelect}
       />
     ));
     return (
       <div>
         <h1 className="animated slideInDown">Students</h1>
         <NavLink className="animated fadeIn"
-        tag={RRNavLink} to='/studentadd'><i class="fas fa-plus-circle fa-3x"></i>
+          tag={RRNavLink} to='/studentadd'><i class="fas fa-plus-circle fa-3x"></i>
         </NavLink>
         <SearchField
-            placeholder="Search Students"
-            onChange={ this.onChange }
-            searchText=""
-            classNames="search-bar"
-          />
-          <div className="student-table-header">
+          placeholder="Search Students"
+          onChange={this.onChange}
+          searchText=""
+          classNames="search-bar"
+        />
+        <div className="student-table-header">
           <Row>
             <Col className="col-sm-4 mt-2">
               <h3><strong>NAME</strong></h3>
@@ -101,7 +101,7 @@ class Students extends React.Component {
               <h3><strong>ACTION</strong></h3>
             </Col>
           </Row>
-          </div>
+        </div>
         <h3>{studentItemComponents}</h3>
       </div>
     );

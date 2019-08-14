@@ -104,7 +104,7 @@ class UniformAdd extends React.Component {
             />
           </div>
 
-          <button className="btn btn-light">SAVE</button>
+          <button className="btn btn-success"><i class="far fa-check-square fa-2x"></i></button>
         </form>
       </div>
     );

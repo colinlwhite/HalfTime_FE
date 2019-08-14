@@ -30,17 +30,21 @@ class UniformDetail extends React.Component {
     return (
       <div>
         <h1>Uniform Details</h1>
-          <button onClick={this.backToUniformsView}>BACK TO UNIFORMS</button>
-            <div class="card mx-auto mt-4 animated zoomIn" style={{ width: '35%' }}>
-              <div class="card-body">
-                  <h3><strong>Uniform ID:</strong> {singleUniform.id}</h3>
-                  <h3><strong>Size:</strong> {singleUniform.size}</h3>
-                  <h3><strong>Condition:</strong> {singleUniform.condition}</h3>
-                  <h3><strong>Student ID:</strong> {singleUniform.studentId}</h3>
-                  <span><button className="btn btn-primary" onClick={this.editUniform}>EDIT</button></span>
-              </div>
-              </div>
+        <button class="btn btn-primary" onClick={this.backToUniformsView}>
+          <i class="fas fa-arrow-circle-left fa-2x"></i>
+        </button>
+        <div class="card mx-auto mt-4 animated zoomIn" style={{ width: '35%' }}>
+          <div class="card-body">
+            <h3><strong>Uniform ID:</strong> {singleUniform.id}</h3>
+            <h3><strong>Size:</strong> {singleUniform.size}</h3>
+            <h3><strong>Condition:</strong> {singleUniform.condition}</h3>
+            <h3><strong>Student ID:</strong> {singleUniform.studentId}</h3>
+            <span><button className="btn btn-primary" onClick={this.editUniform}>
+              <i class="fas fa-pencil-alt fa-2x"></i>
+            </button></span>
+          </div>
         </div>
+      </div>
     );
   }
 }

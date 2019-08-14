@@ -57,7 +57,7 @@ class Events extends React.Component {
         tag={RRNavLink} to='/eventadd'><i class="fas fa-plus-circle fa-3x"></i>
         </NavLink>
         <span><button className="btn btn-primary" onClick={this.sendTextMessage}>
-          SEND NEXT EVENT REMINDER
+        <i class="fas fa-sms fa-3x"></i>
           </button></span>
         <h3 className="container mt-4 d-flex flex-wrap mx-auto">{eventItemComponents}</h3>
       </div>

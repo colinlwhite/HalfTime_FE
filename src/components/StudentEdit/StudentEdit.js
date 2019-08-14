@@ -81,7 +81,7 @@ class StudentEdit extends React.Component {
           <Row>
             <Col className="col-md-6">
               <div className="form-group">
-                <label htmlFor="first name">First Name:</label>
+                <label htmlFor="first name"><strong>First Name</strong></label>
                 <input
                   type="text"
                   className="form-control"
@@ -95,7 +95,7 @@ class StudentEdit extends React.Component {
             </Col>
             <Col className="col-md-6">
               <div className="form-group">
-                <label htmlFor="last name">Last Name:</label>
+                <label htmlFor="last name"><strong>Last Name</strong></label>
                 <input
                   type="text"
                   className="form-control"
@@ -111,7 +111,7 @@ class StudentEdit extends React.Component {
           <Row>
             <Col className="col-md-12">
               <div className="form-group">
-                <label htmlFor="street">Street:</label>
+                <label htmlFor="street"><strong>Street</strong></label>
                 <input
                   type="text"
                   className="form-control"
@@ -127,7 +127,7 @@ class StudentEdit extends React.Component {
           <Row>
             <Col className="col-md-4">
               <div className="form-group">
-                <label htmlFor="city">City:</label>
+                <label htmlFor="city"><strong>City</strong></label>
                 <input
                   type="text"
                   className="form-control"
@@ -142,7 +142,7 @@ class StudentEdit extends React.Component {
             <Col className="col-md-4">
 
               <FormGroup className="form-group">
-                <Label htmlFor="condition">State:</Label>
+                <Label htmlFor="condition"><strong>State</strong></Label>
                 <Input type="select" onChange={this.stateChange} value={newStudent.state}>
                   <option>AL</option>
                   <option>AK</option>
@@ -198,7 +198,7 @@ class StudentEdit extends React.Component {
             </Col>
             <Col className="col-md-4">
               <div className="form-group">
-                <label htmlFor="zipcode">ZipCode:</label>
+                <label htmlFor="zipcode"><strong>ZipCode</strong></label>
                 <input
                   type="number"
                   className="form-control"
@@ -214,7 +214,7 @@ class StudentEdit extends React.Component {
           <Row>
             <Col className="col-md-4">
               <FormGroup className="form-group">
-                <Label htmlFor="gender">Gender:</Label>
+                <Label htmlFor="gender"><strong>Gender</strong></Label>
                 <Input type="select" onChange={this.genderChange} value={newStudent.gender}>
                   <option>Male</option>
                   <option>Female</option>
@@ -223,7 +223,7 @@ class StudentEdit extends React.Component {
             </Col>
             <Col className="col-md-4">
               <FormGroup className="form-group">
-                <Label htmlFor="grade">Grade:</Label>
+                <Label htmlFor="grade"><strong>Grade</strong></Label>
                 <Input type="select" onChange={this.gradeChange} value={newStudent.grade}>
                   <option>Freshman</option>
                   <option>Sophomore</option>
@@ -234,7 +234,7 @@ class StudentEdit extends React.Component {
             </Col>
             <Col className="col-md-4">
               <FormGroup className="form-group">
-                <Label htmlFor="chair">Chair:</Label>
+                <Label htmlFor="chair"><strong>Chair</strong></Label>
                 <Input type="select" onChange={this.chairChange} value={newStudent.chair}>
                   <option>1st</option>
                   <option>2nd</option>
@@ -245,7 +245,7 @@ class StudentEdit extends React.Component {
               </FormGroup>
             </Col>
           </Row>
-          <button className="btn btn-light">SAVE</button>
+          <button className="btn btn-success"><i class="far fa-check-square fa-2x"></i></button>
         </form>
       </div>
     );

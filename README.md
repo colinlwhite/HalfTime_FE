@@ -1,68 +1,65 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# HalfTime
 
-## Available Scripts
+This is my Full Stack Capstone Project for Nashville Software School. HalfTime is an application for band directors to manage and track the program’s students, instruments, uniforms and events. The application was made with React and various components to enhance the experience. Twilio's API allows the primary user to send SMS messages to volunteers about upcoming events. Other technologies include C# and .NET.
 
-In the project directory, you can run:
+## Technologies Used
+* [Animate CSS](https://daneden.github.io/animate.css/)
+* ASP.Net
+* Axios
+* Bootstrap 4
+* C#
+* Dapper
+* [Darkmode.js](https://darkmodejs.learn.uno/)
+* HTML
+* JavaScript
+* React
+* [React-DatePicker](https://www.npmjs.com/package/react-datepicker)
+* [React Search Field](https://www.npmjs.com/package/react-search-field)
+* Sass
+* SQL
+* Twilio
+* Webpack
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Screen shots
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+1. Home Page
+![mainview](./screenshots/homepage.PNG)
 
-### `npm test`
+2. Home Page (Dark Mode)
+![mainview](./screenshots/homepage_dm.PNG)
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Students Page
+![mainview](./screenshots/studentspage.PNG)
 
-### `npm run build`
+4. Students Page Add
+![mainview](./screenshots/studentpageadd.PNG)
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. Instruments Page
+![mainview](./screenshots/instrumentspage.PNG)
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+6. Individual Instrument Page
+![mainview](./screenshots/singleinstrumentpage.PNG)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+7. Individual Instrument Page (Dark Mode)
+![mainview](./screenshots/singleinstrumentpage_dm.PNG)
 
-### `npm run eject`
+8. Uniforms Page
+![mainview](./screenshots/uniformpage.PNG)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+9. Events Page
+![mainview](./screenshots/eventspage.PNG)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+10. Events SMS Alert
+![mainview](./screenshots/smsalert.PNG)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+11. Volunteers Page
+![mainview](./screenshots/volunteerspage.PNG)
+    
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Contributors:
+* [Colin White](https://github.com/colinlwhite)
+* [Nathan Gonzalez](https://github.com/copypastedeveloper) - Lead Instructor
+* [Martin Cross](https://github.com/franticallycodes) - Teaching Assistant
+* [Adam Wieckert](https://github.com/awieckert) - Teaching Assistant
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

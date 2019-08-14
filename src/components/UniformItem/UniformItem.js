@@ -35,7 +35,7 @@ class UniformItem extends React.Component {
             <h2 onClick={this.uniformClick}>{uniform.size}</h2>
           </Col>
           <Col className="col-sm-4 mt-2">
-            <span><button className="btn btn-danger" onClick={this.deleteUniform}>DELETE</button></span>
+            <h3><button className="btn btn-danger" onClick={this.deleteUniform}><i class="far fa-trash-alt fa-2x"></i></button></h3>
           </Col>
         </Row>
       </div>

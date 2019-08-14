@@ -196,7 +196,7 @@ class InstrumentEdit extends React.Component {
               </div>
             </Col>
           </Row>
-          <button className="btn btn-light">SAVE</button>
+          <button className="btn btn-success"><i class="far fa-check-square fa-2x"></i></button>
 
         </form>
       </div>

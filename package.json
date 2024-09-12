@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.28.0",
-    "bootstrap": "^4.3.1",
+    "bootstrap": "^5.0.0",
     "dapper": "0.0.6",
     "darkmode-js": "^1.4.0",
     "eslint-config-airbnb-base": "^13.2.0",
